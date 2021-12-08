@@ -25,6 +25,5 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 router.post("/addPDF", upload.single("file"), pdfController.addPDF);
-router.get("/getImages/:id/:projectName", pdfController.getImages);
 
 module.exports = router;
