@@ -4,5 +4,5 @@ import sys
 images = convert_from_path(sys.argv[1])
 
 for i in range(len(images)):
-    # Save pages as images in the pdf
+    print(sys.argv[1] + 'page' + str(i) + '.jpg')
     images[i].save(sys.argv[1] + 'page' + str(i) + '.jpg', 'JPEG')

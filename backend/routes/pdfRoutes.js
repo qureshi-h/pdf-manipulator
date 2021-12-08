@@ -8,6 +8,7 @@ const multer = require("multer");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
+    console.log(req.body);
     const dir = "uploads/" + req.body.id + "/" + req.body.projectName + "/";
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir, {
@@ -17,11 +18,13 @@ const storage = multer.diskStorage({
     cb(null, dir);
   },
   filename: (req, file, cb) => {
-    cb(null, Date.now() + "-" + file.originalname);
+    console.log(file.originalname.replaceAll(" ", ""));
+    cb(null, Date.now() + "-" + file.originalname.replaceAll(" ", ""));
   },
 });
 const upload = multer({ storage: storage });
 
-router.post("/", upload.single("file"), pdfController.addPDF);
+router.post("/addPDF", upload.single("file"), pdfController.addPDF);
+router.get("/getImages/:id/:projectName", pdfController.getImages);
 
 module.exports = router;
