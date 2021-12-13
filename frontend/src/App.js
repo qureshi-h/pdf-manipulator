@@ -1,12 +1,15 @@
 import "./App.css";
-import { UploadFile } from "./Components/UploadFile";
+import "react-grid-layout/css/styles.css";
+import "react-resizable/css/styles.css";
+
+import { Home } from "./Pages/Home";
 
 function App() {
-  return (
-    <div className="App">
-      <UploadFile />
-    </div>
-  );
+    return (
+        <div className="App">
+            <Home />
+        </div>
+    );
 }
 
 export default App;
