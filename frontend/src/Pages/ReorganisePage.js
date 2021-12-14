@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { DisplayFile } from "../Components/DisplayFile";
-import { DisplayImages } from "../Components/DisplayImages";
-import { UploadFile } from "../Components/UploadFile";
+import { DisplayFile } from "../Components/ReorganisePDF/DisplayFile";
+import { DisplayImages } from "../Components/ReorganisePDF/DisplayImages";
+import { UploadFile } from "../Components/ReorganisePDF/UploadFile";
 
-export const Home = () => {
+export const ReorganisePage = () => {
     const [images, setImages] = useState([]);
     const [outFile, setOutFile] = useState(null);
 

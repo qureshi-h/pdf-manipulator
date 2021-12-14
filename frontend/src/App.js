@@ -1,13 +1,23 @@
 import "./App.css";
-import "react-grid-layout/css/styles.css";
-import "react-resizable/css/styles.css";
 
-import { Home } from "./Pages/Home";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
+
+import { ReorganisePage } from "./Pages/ReorganisePage";
+import { LandingPage } from "./Pages/LandingPage";
 
 function App() {
     return (
         <div className="App">
-            <Home />
+            <BrowserRouter>
+                <Routes>
+                    <Route exact path="/" element={<LandingPage />} />
+                    <Route
+                        exact
+                        path="/reorganise"
+                        element={<ReorganisePage />}
+                    />
+                </Routes>
+            </BrowserRouter>
         </div>
     );
 }
