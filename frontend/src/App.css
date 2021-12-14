@@ -23,7 +23,6 @@ h4 {
     font-size: 1.2vw;
     font-weight: 100;
     color: white;
-    text-justify: inherit;
 }
 
 .pdfImage {
@@ -42,6 +41,12 @@ h4 {
     align-items: center;
 }
 
+.background {
+    display: inline-block;
+    position: relative;
+    top: 0;
+}
+
 .backgroundImage {
     width: 100%;
     height: auto;
@@ -58,10 +63,10 @@ h4 {
 .titleButton {
     position: absolute;
     top: 0;
-    margin-top: 41vw;
+    margin-top: 40.5vw;
     left: 2%;
     width: 10vw;
-    height: 4vw;
+    height: 8vh;
 }
 
 .center {
@@ -92,4 +97,41 @@ h4 {
     width: 90%;
     height: 100%;
     border-bottom: 2px solid black;
+}
+
+.navbar {
+    width: 100vw;
+    height: 8vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    position: absolute;
+    display: inline-block;
+}
+
+.navbarLogo {
+    margin-left: 5vw;
+    width: 7vh;
+    display: inline-block;
+}
+
+.navbarText {
+    margin-left: 4vw;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.navbarButton {
+    margin-left: 2vw;
+    width: 8vw;
+    height: 4.5vh;
+}
+
+.navbarButtonText {
+    width: 100%;
+    margin: 0;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }

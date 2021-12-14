@@ -5,7 +5,7 @@ import background from "../../res/LandingPage.jpg";
 
 export const Background = () => {
     return (
-        <div style={{ display: "inline-block" }}>
+        <div className="background">
             <img
                 className="backgroundImage"
                 src={background}
