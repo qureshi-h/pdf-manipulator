@@ -11,6 +11,13 @@ h1 {
     color: white;
 }
 
+h2 {
+    font-family: "Sequel", sans-serif;
+    font-size: 2.5vw;
+    font-weight: 300;
+    color: black;
+}
+
 h4 {
     font-family: "Sequel", sans-serif;
     font-size: 1.2vw;
@@ -65,4 +72,24 @@ h4 {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+}
+
+.tools {
+    width: 90vw;
+    margin-top: 2.5vw;
+    margin-bottom: 2.5vw;
+    margin-left: 2vw;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.toolsHeader {
+    margin-top: 2vw;
+    margin-left: 2vw;
+    position: relative;
+    width: 90%;
+    height: 100%;
+    border-bottom: 2px solid black;
 }
