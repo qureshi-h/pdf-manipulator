@@ -24,7 +24,7 @@ export const Background = () => {
             >
                 <button
                     type="button"
-                    class="btn btn-primary btn-lg titleButton"
+                    className="btn btn-primary btn-lg titleButton"
                 >
                     <h4 className="center">Get Started</h4>
                 </button>
