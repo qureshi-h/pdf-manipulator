@@ -7,7 +7,9 @@ import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 import { Worker } from "@react-pdf-viewer/core";
 
 export const DisplayFile = ({ file }) => {
-    const defaultLayoutPluginInstance = defaultLayoutPlugin();
+    const defaultLayoutPluginInstance = defaultLayoutPlugin({
+        sidebarTabs: () => [],
+    });
 
     const [displayFile, setDisplayFile] = useState(file);
 

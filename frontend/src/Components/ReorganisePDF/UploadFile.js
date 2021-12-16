@@ -23,7 +23,7 @@ export const UploadFile = ({ setImages, setOutFile }) => {
         formData.append("projectName", "zeta");
         formData.append("file", selectedFile);
 
-        fetch("http://localhost:5001/pdf/addPDF", {
+        fetch("https://server-online-pdf-manager.herokuapp.com/pdf/addPDF", {
             method: "POST",
             body: formData,
         })

@@ -46,7 +46,7 @@ export const DisplayImages = ({ pdfImages, setOutFile }) => {
     };
 
     const handleDone = () => {
-        fetch("http://localhost:5001/pdf/submitPDF", {
+        fetch("https://server-online-pdf-manager.herokuapp.com/pdf/submitPDF", {
             method: "POST",
             headers: new Headers({
                 "Content-Type": "application/json",
