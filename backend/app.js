@@ -19,6 +19,13 @@ app.use("/uploads", express.static("uploads"));
 // define routes
 app.use("/pdf", pdfRouter);
 
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("crm/build"));
+    // app.get("*", (req, res) => {
+    //     res.sendFile(path.resolve(__dirname, "crm", "build", "index.html"));
+    // });
+}
+
 app.listen(PORT, function () {
     console.log("CORS-enabled web server listening on port", PORT);
 });
