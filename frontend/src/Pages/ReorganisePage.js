@@ -17,12 +17,13 @@ export const ReorganisePage = () => {
             </Helmet>
 
             <NavigationBar />
-            <UploadFile setImages={setImages} />
-            {images.length > 0 && (
+
+            <UploadFile setImages={setImages} setOutFile={setOutFile} />
+            {images.length > 0 && !outFile && (
                 <DisplayImages pdfImages={images} setOutFile={setOutFile} />
             )}
-            {/*
-            {outFile !== null && <DisplayFile file={outFile} />} */}
+
+            {outFile && <DisplayFile file={outFile} />}
         </div>
     );
 };

@@ -37,10 +37,11 @@ p {
 }
 
 .pdf-container {
+    margin: 4vw 0vw 4vw 0vw;
     position: relative;
     left: 15%;
     width: 70%;
-    height: 800px;
+    height: 70vh;
     background-color: #e4e4e4;
     overflow-y: auto;
     display: flex;
@@ -155,7 +156,7 @@ p {
 }
 
 .uploadInput {
-    margin-left: 35vw;
+    margin-left: 37vw;
     width: 8vw;
     height: 4vh;
     color: white;
@@ -187,4 +188,20 @@ input[type="file"] {
 
     margin-left: 2vw;
     display: inline-block;
+}
+
+.doneButton {
+    margin: 4vh 0 2vh 0;
+    width: 6vw;
+    height: 4vh;
+    display: block;
+    background-color: #09ff07;
+    border: none;
+}
+
+.imageContainer {
+    padding: 2vw;
+    background-color: rgb(209, 209, 206);
+    border: 2px solid black;
+    outline: 2vw;
 }

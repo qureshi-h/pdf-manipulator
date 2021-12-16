@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 import background from "../../res/LandingPage.jpg";
 

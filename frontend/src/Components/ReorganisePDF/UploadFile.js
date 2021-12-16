@@ -1,7 +1,6 @@
-import { flexbox } from "@mui/system";
 import React, { useState } from "react";
 
-export const UploadFile = ({ setImages }) => {
+export const UploadFile = ({ setImages, setOutFile }) => {
     const [selectedFile, setSelectedFile] = useState(null);
     const [isSelected, setIsSelected] = useState(false);
 
@@ -32,6 +31,7 @@ export const UploadFile = ({ setImages }) => {
             .then((data) => {
                 if (data.status_code === 200) {
                     setImages(data.images.split("\n"));
+                    setOutFile(null);
                 } else alert(data.status_message);
             });
     };
@@ -53,6 +53,7 @@ export const UploadFile = ({ setImages }) => {
                 <i className="fa fa-cloud-upload"></i>Choose a PDF
             </label>
             <input id="file-upload" type="file" onChange={changeHandler} />
+
             {isSelected && <h4 className="uploadText">{selectedFile.name}</h4>}
             {isSelected && (
                 <button

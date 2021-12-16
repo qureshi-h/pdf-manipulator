@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
+import { DragDropContext } from "react-beautiful-dnd";
 import { v4 as uuid } from "uuid";
+import { Grid } from "@mui/material";
+
+import { DisplayImage } from "./DisplayImage";
 
 export const DisplayImages = ({ pdfImages, setOutFile }) => {
     const [images, SetImages] = useState([]);
@@ -8,6 +11,20 @@ export const DisplayImages = ({ pdfImages, setOutFile }) => {
     useEffect(() => {
         assignImages();
     }, [pdfImages]);
+
+    useEffect(() => {
+        scroll();
+    }, []);
+
+    const scroll = () => {
+        const titleElement = document.getElementById("displayContainer");
+        console.log(titleElement);
+        titleElement.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+            inline: "nearest",
+        });
+    };
 
     const assignImages = () => {
         const images = [];
@@ -41,7 +58,6 @@ export const DisplayImages = ({ pdfImages, setOutFile }) => {
         })
             .then((response) => response.json())
             .then((data) => {
-                console.log(data);
                 if (data.status_code === 200) {
                     setOutFile(data.pdf);
                 } else alert(data.status_message);
@@ -49,101 +65,41 @@ export const DisplayImages = ({ pdfImages, setOutFile }) => {
     };
 
     return (
-        <div
-            style={{
-                display: "flex",
-                justifyContent: "center",
-                width: "100%",
-                flexFlow: "row wrap",
-                height: "100%",
-            }}
-        >
-            <div>
-                <button onClick={handleDone}>Done</button>
+        <div style={{ marginLeft: "5vw", width: "90vw" }} id="displayContainer">
+            <div style={{ width: "95vw", justifyContent: "center" }}>
+                <button
+                    type="button"
+                    className="btn btn-light btn-lg doneButton"
+                    onClick={handleDone}
+                >
+                    <h4 style={{ color: "black" }}>Done</h4>
+                </button>
             </div>
-            <DragDropContext
-                onDragEnd={(result) => onDragEnd(result, images, SetImages)}
-            >
-                {images.map((item, index) => {
-                    return (
-                        <div
-                            style={{
-                                display: "flex",
-                                alignItems: "center",
-                                width: "25%",
-                                height: "100%",
-                            }}
-                            key={index}
-                        >
-                            <div style={{ margin: 0 }}>
-                                <Droppable
-                                    droppableId={item.id}
-                                    key={item.id}
-                                    direction="horizontal"
+
+            <div className="imageContainer" id="imageContainer">
+                <Grid container spacing={3}>
+                    <DragDropContext
+                        onDragEnd={(result) =>
+                            onDragEnd(result, images, SetImages)
+                        }
+                    >
+                        {images.map((item, index) => {
+                            return (
+                                <Grid
+                                    item
+                                    xs={12}
+                                    sm={6}
+                                    md={3}
+                                    lg={2}
+                                    key={index}
                                 >
-                                    {(provided, snapshot) => {
-                                        return (
-                                            <div
-                                                {...provided.droppableProps}
-                                                ref={provided.innerRef}
-                                                style={{
-                                                    background:
-                                                        snapshot.isDraggingOver
-                                                            ? "lightblue"
-                                                            : "lightgrey",
-                                                    height: "0%",
-                                                }}
-                                            >
-                                                <Draggable
-                                                    key={item.id}
-                                                    draggableId={item.id}
-                                                    index={index}
-                                                >
-                                                    {(provided, snapshot) => {
-                                                        return (
-                                                            <div
-                                                                ref={
-                                                                    provided.innerRef
-                                                                }
-                                                                {...provided.draggableProps}
-                                                                {...provided.dragHandleProps}
-                                                                style={{
-                                                                    userSelect:
-                                                                        "none",
-                                                                    backgroundColor:
-                                                                        snapshot.isDragging
-                                                                            ? "#263B4A"
-                                                                            : "#456C86",
-                                                                    color: "white",
-                                                                    ...provided
-                                                                        .draggableProps
-                                                                        .style,
-                                                                }}
-                                                            >
-                                                                <img
-                                                                    src={
-                                                                        "http://localhost:5001/" +
-                                                                        item.image
-                                                                    }
-                                                                    style={{
-                                                                        width: "100%",
-                                                                    }}
-                                                                    alt={index}
-                                                                ></img>
-                                                            </div>
-                                                        );
-                                                    }}
-                                                </Draggable>
-                                                {provided.placeholder}
-                                            </div>
-                                        );
-                                    }}
-                                </Droppable>
-                            </div>
-                        </div>
-                    );
-                })}
-            </DragDropContext>
+                                    <DisplayImage item={item} index={index} />
+                                </Grid>
+                            );
+                        })}
+                    </DragDropContext>
+                </Grid>
+            </div>
         </div>
     );
 };
