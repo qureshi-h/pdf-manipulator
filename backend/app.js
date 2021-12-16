@@ -12,12 +12,13 @@ app.use(bodyParser.json());
 app.use("/uploads", express.static("uploads"));
 
 app.use(cors());
+app.enable("trust proxy");
 
 // define routes
 app.use("/pdf", pdfRouter);
 
 app.listen(5001, function () {
-  console.log("CORS-enabled web server listening on port", 5001);
+    console.log("CORS-enabled web server listening on port", 5001);
 });
 
 module.exports = app;
