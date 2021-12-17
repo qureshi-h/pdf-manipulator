@@ -6,10 +6,10 @@ const { spawnSync } = require("child_process");
 
 exports.addPDF = async (req, res) => {
     try {
-        let [result] = await pdf.add(
-            req.file.originalname.split(".")[0],
-            req.file.path
-        );
+        // let [result] = await pdf.add(
+        //     req.file.originalname.split(".")[0],
+        //     req.file.path
+        // );
 
         const { stdout, stderr } = spawnSync("python3", [
             "pdfmanipulation/pdf_to_image.py",
@@ -20,6 +20,7 @@ exports.addPDF = async (req, res) => {
             status_code: 200,
             status_message: "Success",
             images: `${stdout}`,
+            error: `${stderr}`,
         });
     } catch (err) {
         res.status(400).json({
