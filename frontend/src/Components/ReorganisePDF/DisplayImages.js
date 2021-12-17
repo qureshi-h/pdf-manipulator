@@ -5,7 +5,7 @@ import { Grid } from "@mui/material";
 
 import { DisplayImage } from "./DisplayImage";
 
-export const DisplayImages = ({ pdfImages, setOutFile }) => {
+export const DisplayImages = ({ pdfImages, setOutFile, setLoading }) => {
     const [images, SetImages] = useState([]);
 
     useEffect(() => {
@@ -46,6 +46,8 @@ export const DisplayImages = ({ pdfImages, setOutFile }) => {
     };
 
     const handleDone = () => {
+        setLoading(true);
+
         fetch("https://server-online-pdf-manager.herokuapp.com/pdf/submitPDF", {
             method: "POST",
             headers: new Headers({
@@ -60,6 +62,7 @@ export const DisplayImages = ({ pdfImages, setOutFile }) => {
             .then((data) => {
                 if (data.status_code === 200) {
                     setOutFile(data.pdf);
+                    setLoading(false);
                 } else alert(data.status_message);
             });
     };
