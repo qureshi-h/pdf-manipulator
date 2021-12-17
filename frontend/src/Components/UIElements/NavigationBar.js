@@ -29,7 +29,7 @@ export const NavigationBar = () => {
                     type="button"
                     className="btn btn-outline-primary btn-lg navbarButton"
                 >
-                    <h4 className="center navbarButtonText">Login</h4>
+                    <h4>Login</h4>
                 </button>
             </div>
         </div>
