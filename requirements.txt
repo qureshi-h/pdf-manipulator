@@ -1,3 +1,0 @@
-olefile @ file:///home/conda/feedstock_root/build_artifacts/olefile_1602866521163/work
-pdf2image @ file:///home/conda/feedstock_root/build_artifacts/pdf2image_1624884394448/work
-Pillow @ file:///Users/runner/miniforge3/conda-bld/pillow_1636559192054/work
