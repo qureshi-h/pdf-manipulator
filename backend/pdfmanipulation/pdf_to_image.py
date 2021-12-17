@@ -7,12 +7,12 @@ import sys
 
 # print(install("pdf2image"))
 
-import pkg_resources
-installed_packages = pkg_resources.working_set
-installed_packages_list = sorted(["%s==%s" % (i.key, i.version) for i in installed_packages])
-print(installed_packages_list)
+# import pkg_resources
+# installed_packages = pkg_resources.working_set
+# installed_packages_list = sorted(["%s==%s" % (i.key, i.version) for i in installed_packages])
+# print(installed_packages_list)
 
-# from pdf2image import convert_from_path
+from pdf2image import convert_from_path
 # import sys
 
 images = convert_from_path(sys.argv[1])
