@@ -3,7 +3,7 @@ import subprocess
 import sys
 
 # def install(package):
-#     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+subprocess.check_call([sys.executable, "-m", "pip", "install", "pdf2image"])
 
 # print(install("pdf2image"))
 
