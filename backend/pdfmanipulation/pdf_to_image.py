@@ -1,6 +1,7 @@
 
 import subprocess
 import sys
+import os
 
 # def install(package):
 # subprocess.check_call([sys.executable, "-m", "pip", "install", "pdf2image"])
@@ -11,6 +12,7 @@ import sys
 # # installed_packages = pkg_resources.working_set
 # # installed_packages_list = sorted(["%s==%s" % (i.key, i.version) for i in installed_packages])
 # # print(installed_packages_list)
+print([x[0] for x in os.walk(directory)])
 
 from pdf2image import convert_from_path
 
