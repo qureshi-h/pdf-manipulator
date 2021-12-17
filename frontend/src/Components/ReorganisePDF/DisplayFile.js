@@ -4,7 +4,7 @@ import { Viewer } from "@react-pdf-viewer/core";
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import "@react-pdf-viewer/default-layout/lib/styles/index.css";
-import { Worker } from "@react-pdf-viewer/core";
+import { Worker, ProgressBar } from "@react-pdf-viewer/core";
 
 export const DisplayFile = ({ file }) => {
     const defaultLayoutPluginInstance = defaultLayoutPlugin({
@@ -30,6 +30,13 @@ export const DisplayFile = ({ file }) => {
                         fileUrl={displayFile}
                         theme={{ theme: "light" }}
                         onDocumentLoad={onDocumentLoad}
+                        renderLoader={(percentages) => (
+                            <div style={{ width: "240px" }}>
+                                <ProgressBar
+                                    progress={Math.round(percentages)}
+                                />
+                            </div>
+                        )}
                         plugins={[defaultLayoutPluginInstance]}
                     />
                 </Worker>

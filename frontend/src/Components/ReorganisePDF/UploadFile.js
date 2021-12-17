@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const UploadFile = ({ setImages, setOutFile }) => {
+export const UploadFile = ({ setImages, setOutFile, setLoading }) => {
     const [selectedFile, setSelectedFile] = useState(null);
     const [isSelected, setIsSelected] = useState(false);
 
@@ -17,6 +17,7 @@ export const UploadFile = ({ setImages, setOutFile }) => {
     };
 
     const handleSubmission = () => {
+        setLoading(true);
         const formData = new FormData();
 
         formData.append("id", 0);
@@ -32,6 +33,7 @@ export const UploadFile = ({ setImages, setOutFile }) => {
                 if (data.status_code === 200) {
                     setImages(data.images.split("\n"));
                     setOutFile(null);
+                    setLoading(false);
                 } else alert(data.status_message);
             });
     };
