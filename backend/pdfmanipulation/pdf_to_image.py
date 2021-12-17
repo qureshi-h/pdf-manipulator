@@ -12,7 +12,7 @@ import os
 # # installed_packages = pkg_resources.working_set
 # # installed_packages_list = sorted(["%s==%s" % (i.key, i.version) for i in installed_packages])
 # # print(installed_packages_list)
-print([x[0] for x in os.walk(".")])
+print(os.listdir("./uploads/1/alpha"))
 
 from pdf2image import convert_from_path
 
