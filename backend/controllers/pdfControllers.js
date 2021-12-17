@@ -19,7 +19,7 @@ exports.addPDF = async (req, res) => {
         res.status(200).json({
             status_code: 200,
             status_message: "Success",
-            // images: `${stdout}`,
+            images: `${stdout}`,
         });
     } catch (err) {
         res.status(400).json({
