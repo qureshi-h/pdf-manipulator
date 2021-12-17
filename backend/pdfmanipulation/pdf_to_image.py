@@ -13,7 +13,8 @@ import sys
 # # print(installed_packages_list)
 
 from pdf2image import convert_from_path
-# import sys
+
+print(sys.argv[1])
 
 images = convert_from_path(sys.argv[1])
 for i in range(len(images)):
