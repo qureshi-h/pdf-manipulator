@@ -11,10 +11,10 @@ exports.addPDF = async (req, res) => {
         //     req.file.path
         // );
 
-        // const { stdout, stderr } = spawnSync("python3", [
-        //     "pdfmanipulation/pdf_to_image.py",
-        //     req.file.path,
-        // ]);
+        const { stdout, stderr } = spawnSync("python3", [
+            "pdfmanipulation/pdf_to_image.py",
+            req.file.path,
+        ]);
 
         res.status(200).json({
             status_code: 200,
