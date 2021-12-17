@@ -44,7 +44,7 @@ export const DisplayImage = ({ item, index }) => {
                                         >
                                             <img
                                                 src={
-                                                    "http://localhost:5001/" +
+                                                    "https://server-online-pdf-manager.herokuapp.com/" +
                                                     item.image
                                                 }
                                                 style={{
