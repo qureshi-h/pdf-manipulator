@@ -48,16 +48,19 @@ export const DisplayImages = ({ pdfImages, setOutFile, setLoading }) => {
     const handleDone = () => {
         setLoading(true);
 
-        fetch("https://server-online-pdf-manager.herokuapp.com/pdf/submitPDF", {
-            method: "POST",
-            headers: new Headers({
-                "Content-Type": "application/json",
-                Accept: "application/json",
-            }),
-            body: JSON.stringify({
-                images: images.map((images) => images.image),
-            }),
-        })
+        fetch(
+            "https://server-online-pdf-manager.herokuapp.com/pdf/reorganise/submitPDF",
+            {
+                method: "POST",
+                headers: new Headers({
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                }),
+                body: JSON.stringify({
+                    images: images.map((images) => images.image),
+                }),
+            }
+        )
             .then((response) => response.json())
             .then((data) => {
                 if (data.status_code === 200) {

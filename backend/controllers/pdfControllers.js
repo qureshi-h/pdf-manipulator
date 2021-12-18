@@ -12,7 +12,7 @@ exports.addPDF = async (req, res) => {
         // );
 
         const { stdout, stderr } = spawnSync("python3", [
-            "pdfmanipulation/pdf_to_image.py",
+            "pdfmanipulation/reorganise/pdf_to_image.py",
             req.file.path,
         ]);
 
@@ -35,7 +35,7 @@ exports.submitPDF = async (req, res) => {
         const { images } = req.body;
 
         const { stdout, stderr } = spawnSync("python3", [
-            "pdfmanipulation/image_to_pdf.py",
+            "pdfmanipulation/reorganise/image_to_pdf.py",
             images,
         ]);
 
@@ -45,6 +45,29 @@ exports.submitPDF = async (req, res) => {
             pdf:
                 "https://server-online-pdf-manager.herokuapp.com/" +
                 `${stdout}`,
+        });
+    } catch (err) {
+        res.status(400).json({
+            status_code: 400,
+            status_message: "Error: Internal Server Error",
+        });
+    }
+};
+
+exports.mergeAdd = async (req, res) => {
+    try {
+        const files = req.files.map((file) => file.path);
+
+        const { stdout, stderr } = spawnSync("python3", [
+            "pdfmanipulation/merge/merge.py",
+            files,
+        ]);
+
+        res.status(200).json({
+            status_code: 200,
+            status_message: "Success",
+            pdf: "http://localhost:5001/" + `${stdout}`,
+            err: `${stderr}`,
         });
     } catch (err) {
         res.status(400).json({
