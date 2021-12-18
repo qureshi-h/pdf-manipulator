@@ -43,8 +43,13 @@ export const DisplayFiles = ({
                 if (data.status_code === 200) {
                     setOutFile(data.pdf);
                     setLoading(false);
+                    setSelectedFiles([]);
                 } else alert(data.status_message);
             });
+    };
+
+    const handleClear = () => {
+        setSelectedFiles([]);
     };
 
     return (
@@ -52,8 +57,8 @@ export const DisplayFiles = ({
             <div
                 style={{
                     width: "95vw",
-                    justifyContent: "center",
                     marginLeft: "25vw",
+                    display: "inline-flex",
                 }}
             >
                 <button
@@ -63,10 +68,18 @@ export const DisplayFiles = ({
                 >
                     <h4 style={{ color: "black" }}>Done</h4>
                 </button>
+
+                <button
+                    type="button"
+                    className="btn btn-light btn-lg clearButton"
+                    onClick={handleClear}
+                >
+                    <h4 style={{ color: "black" }}>Clear</h4>
+                </button>
             </div>
             <div
                 className="imageContainer"
-                style={{ margin: "3vw 0 0 25vw", width: "40vw" }}
+                style={{ margin: "2vw 0 0 25vw", width: "40vw" }}
             >
                 <DragDropContext onDragEnd={(result) => onDragEnd(result)}>
                     {selectedFiles.map((item, index) => {
