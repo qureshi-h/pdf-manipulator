@@ -24,10 +24,13 @@ export const UploadFile = ({ setImages, setOutFile, setLoading }) => {
         formData.append("projectName", "zeta");
         formData.append("file", selectedFile);
 
-        fetch("https://server-online-pdf-manager.herokuapp.com/pdf/addPDF", {
-            method: "POST",
-            body: formData,
-        })
+        fetch(
+            "https://server-online-pdf-manager.herokuapp.com/pdf/reorganise/addPDF",
+            {
+                method: "POST",
+                body: formData,
+            }
+        )
             .then((response) => response.json())
             .then((data) => {
                 if (data.status_code === 200) {
