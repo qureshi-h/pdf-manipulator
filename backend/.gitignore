@@ -9,3 +9,5 @@ env.env
 
 *.pdf
 *.jpg
+
+.DS_Store
