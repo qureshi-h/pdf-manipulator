@@ -34,10 +34,13 @@ export const DisplayFiles = ({
             formData.append("files", selectedFiles[i].file);
         }
 
-        fetch("http://localhost:5001/pdf/merge/addPDF", {
-            method: "POST",
-            body: formData,
-        })
+        fetch(
+            "https://server-online-pdf-manager.herokuapp.com/pdf/merge/addPDF",
+            {
+                method: "POST",
+                body: formData,
+            }
+        )
             .then((response) => response.json())
             .then((data) => {
                 if (data.status_code === 200) {
