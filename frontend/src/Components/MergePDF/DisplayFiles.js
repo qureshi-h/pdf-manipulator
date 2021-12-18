@@ -6,6 +6,7 @@ export const DisplayFiles = ({
     selectedFiles,
     setSelectedFiles,
     setLoading,
+    setOutFile,
 }) => {
     const handleDelete = (id) => {
         setSelectedFiles(selectedFiles.filter((item) => item.id !== id));
@@ -26,29 +27,24 @@ export const DisplayFiles = ({
         setLoading(true);
         const formData = new FormData();
 
-        formData.append("id", 1);
+        formData.append("id", 0);
         formData.append("projectName", "merge");
 
         for (let i = 0; i < selectedFiles.length; i++) {
-            formData.append(`images[${i}]`, selectedFiles[i]);
+            formData.append("files", selectedFiles[i].file);
         }
-        // fetch("https://server-online-pdf-manager.herokuapp.com/pdf/submitPDF", {
-        //     method: "POST",
-        //     headers: new Headers({
-        //         "Content-Type": "application/json",
-        //         Accept: "application/json",
-        //     }),
-        //     body: JSON.stringify({
-        //         images: images.map((images) => images.image),
-        //     }),
-        // })
-        //     .then((response) => response.json())
-        //     .then((data) => {
-        //         if (data.status_code === 200) {
-        //             setOutFile(data.pdf);
-        //             setLoading(false);
-        //         } else alert(data.status_message);
-        //     });
+
+        fetch("http://localhost:5001/pdf/merge/addPDF", {
+            method: "POST",
+            body: formData,
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.status_code === 200) {
+                    setOutFile(data.pdf);
+                    setLoading(false);
+                } else alert(data.status_message);
+            });
     };
 
     return (

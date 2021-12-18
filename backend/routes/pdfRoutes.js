@@ -26,6 +26,6 @@ router.post("/reorganise/addPDF", upload.single("file"), pdfController.addPDF);
 
 router.post("/reorganise/submitPDF", pdfController.submitPDF);
 
-router.post("/merge/addPDF", upload.single("file"), pdfController.addPDF);
+router.post("/merge/addPDF", upload.array("files"), pdfController.mergeAdd);
 
 module.exports = router;
