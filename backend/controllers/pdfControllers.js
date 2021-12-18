@@ -59,7 +59,7 @@ exports.mergeAdd = async (req, res) => {
         const files = req.files.map((file) => file.path);
 
         const { stdout, stderr } = spawnSync("python3", [
-            "pdfmanipulation/merge/merge.py",
+            "pdfmanipulation/merge/merge-bookmarked.py",
             files,
         ]);
 

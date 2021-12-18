@@ -214,3 +214,11 @@ input[type="file"] {
 .mergeInput {
     margin-left: 45vw;
 }
+
+.clearButton {
+    margin: 4vh 0 2vh 28vw;
+    width: 6vw;
+    height: 4vh;
+    display: block;
+    border: none;
+}

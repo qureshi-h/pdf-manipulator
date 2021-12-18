@@ -1,7 +1,11 @@
 import React from "react";
 import { v4 as uuid } from "uuid";
 
-export const UploadFiles = ({ selectedFiles, setSelectedFiles }) => {
+export const UploadFiles = ({
+    selectedFiles,
+    setSelectedFiles,
+    setOutFile,
+}) => {
     const changeHandler = (event) => {
         const new_files = event.target.files;
         const files = [...selectedFiles];
@@ -10,6 +14,7 @@ export const UploadFiles = ({ selectedFiles, setSelectedFiles }) => {
             files.push({ id: uuid(), file: new_files[i] });
         }
         setSelectedFiles(files);
+        setOutFile(null);
     };
 
     return (

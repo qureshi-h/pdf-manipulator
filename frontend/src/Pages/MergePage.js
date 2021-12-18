@@ -22,6 +22,7 @@ export const MergePage = () => {
             <UploadFiles
                 selectedFiles={selectedFiles}
                 setSelectedFiles={setSelectedFiles}
+                setOutFile={setOutFile}
             />
 
             {loading ? (
