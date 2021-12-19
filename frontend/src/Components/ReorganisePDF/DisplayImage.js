@@ -1,7 +1,9 @@
 import React from "react";
 import { Draggable, Droppable } from "react-beautiful-dnd";
 
-export const DisplayImage = ({ item, index, onLoad }) => {
+import { MdDelete } from "react-icons/md";
+
+export const DisplayImage = ({ item, index, onLoad, handleDelete }) => {
     return (
         <div style={{ display: "grid" }}>
             <Droppable
@@ -48,12 +50,20 @@ export const DisplayImage = ({ item, index, onLoad }) => {
                                                     "https://server-online-pdf-manager.herokuapp.com/" +
                                                     item.image
                                                 }
-                                                style={{
-                                                    border: "1px solid black",
-                                                    width: "100%",
-                                                }}
+                                                className="image"
                                                 alt={index}
-                                            ></img>
+                                            />
+                                            <div
+                                                className="deleteContainer"
+                                                onClick={() =>
+                                                    handleDelete(item.id)
+                                                }
+                                            >
+                                                <MdDelete
+                                                    className="delete"
+                                                    size={"1.5vw"}
+                                                />
+                                            </div>
                                         </div>
                                     );
                                 }}

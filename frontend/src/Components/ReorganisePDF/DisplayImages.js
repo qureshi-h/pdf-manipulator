@@ -65,6 +65,10 @@ export const DisplayImages = ({ pdfImages, setOutFile, setLoading }) => {
             });
     };
 
+    const handleDelete = (id) => {
+        SetImages(images.filter((image) => image.id !== id));
+    };
+
     return (
         <Element name="scroll-to-element">
             <div
@@ -109,6 +113,7 @@ export const DisplayImages = ({ pdfImages, setOutFile, setLoading }) => {
                                             item={item}
                                             index={index}
                                             onLoad={scroll}
+                                            handleDelete={handleDelete}
                                         />
                                     </Grid>
                                 );
