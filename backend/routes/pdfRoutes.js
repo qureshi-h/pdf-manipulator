@@ -28,4 +28,10 @@ router.post("/reorganise/submitPDF", pdfController.submitPDF);
 
 router.post("/merge/addPDF", upload.array("files"), pdfController.mergeAdd);
 
+router.post(
+    "/pdfToImage/addPDF",
+    upload.array("files"),
+    pdfController.pdfToImage
+);
+
 module.exports = router;
