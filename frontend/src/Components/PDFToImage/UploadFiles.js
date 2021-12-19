@@ -36,7 +36,7 @@ export const UploadFiles = ({ setImages, setLoading }) => {
             .then((response) => response.json())
             .then((data) => {
                 if (data.status_code === 200) {
-                    setImages(data.images);
+                    setImages(data.images.split("\n"));
                     setLoading(false);
                 } else alert(data.status_message);
             });
