@@ -1,16 +1,7 @@
 import React from "react";
 import { Draggable, Droppable } from "react-beautiful-dnd";
-import {
-    Link,
-    DirectLink,
-    Element,
-    Events,
-    animateScroll as scroll,
-    scrollSpy,
-    scroller,
-} from "react-scroll";
 
-export const DisplayImage = ({ item, index }) => {
+export const DisplayImage = ({ item, index, onLoad }) => {
     return (
         <div style={{ display: "grid" }}>
             <Droppable
@@ -52,6 +43,7 @@ export const DisplayImage = ({ item, index }) => {
                                             }}
                                         >
                                             <img
+                                                onLoad={onLoad}
                                                 src={
                                                     "https://server-online-pdf-manager.herokuapp.com/" +
                                                     item.image
