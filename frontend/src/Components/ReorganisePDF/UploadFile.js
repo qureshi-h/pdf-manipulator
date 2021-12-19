@@ -51,24 +51,36 @@ export const UploadFile = ({ setImages, setOutFile, setLoading }) => {
                 easiest possible way.
             </h4>
 
-            <label
-                htmlFor="file-upload"
-                className="custom-file-upload uploadInput"
-            >
-                <i className="fa fa-cloud-upload"></i>Choose a PDF
-            </label>
-            <input id="file-upload" type="file" onChange={changeHandler} />
-
-            {isSelected && <h4 className="uploadText">{selectedFile.name}</h4>}
-            {isSelected && (
-                <button
-                    type="button"
-                    className="btn btn-light btn-lg uploadButton"
-                    onClick={handleSubmission}
+            <div className="uploadContainer">
+                <label
+                    htmlFor="file-upload"
+                    className="custom-file-upload uploadInput"
                 >
-                    <h4 style={{ color: "black" }}>Upload</h4>
-                </button>
-            )}
+                    <i className="fa fa-cloud-upload"></i>Choose a PDF
+                </label>
+                <input id="file-upload" type="file" onChange={changeHandler} />
+
+                {isSelected && (
+                    <h4 className="uploadText">{selectedFile.name}</h4>
+                )}
+
+                {isSelected && (
+                    <button
+                        type="button"
+                        className="btn btn-light uploadButton"
+                        onClick={handleSubmission}
+                    >
+                        <h4
+                            style={{
+                                color: "black",
+                                margin: "auto 1vw auto 1vw",
+                            }}
+                        >
+                            Upload
+                        </h4>
+                    </button>
+                )}
+            </div>
         </div>
     );
 };
