@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
+
 import { DisplayFiles } from "../Components/MergePDF/DisplayFiles";
 import { DisplayFile } from "../Components/ReorganisePDF/DisplayFile";
 import { UploadFiles } from "../Components/MergePDF/UploadFiles";
@@ -15,6 +16,7 @@ export const MergePage = () => {
     return (
         <div>
             <Helmet>
+                <title>Online PDF Manager - Merge PDFs</title>
                 <style>{"body { background-color: #060026; }"}</style>
             </Helmet>
 

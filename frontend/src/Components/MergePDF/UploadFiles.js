@@ -26,19 +26,21 @@ export const UploadFiles = ({
                 Combine multiple pdfs in your specified order into a single pdf
                 document.
             </h4>
-
-            <label
-                htmlFor="file-upload"
-                className="custom-file-upload uploadInput mergeInput"
-            >
-                <i className="fa fa-cloud-upload"></i>Choose one or more PDFs
-            </label>
-            <input
-                id="file-upload"
-                type="file"
-                onChange={changeHandler}
-                multiple
-            />
+            <div className="uploadContainer">
+                <label
+                    htmlFor="file-upload"
+                    className="custom-file-upload uploadInput mergeInput"
+                >
+                    <i className="fa fa-cloud-upload"></i>Choose one or more
+                    PDFs
+                </label>
+                <input
+                    id="file-upload"
+                    type="file"
+                    onChange={changeHandler}
+                    multiple
+                />
+            </div>
         </div>
     );
 };
