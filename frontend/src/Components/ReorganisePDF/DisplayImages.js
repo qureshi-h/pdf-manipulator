@@ -81,7 +81,14 @@ export const DisplayImages = ({ pdfImages, setOutFile, setLoading }) => {
                         className="btn btn-light btn-lg doneButton"
                         onClick={handleDone}
                     >
-                        <h4 style={{ color: "black" }}>Done</h4>
+                        <h4
+                            style={{
+                                color: "black",
+                                margin: "auto 1vw auto 1vw",
+                            }}
+                        >
+                            Done
+                        </h4>
                     </button>
                 </div>
 
