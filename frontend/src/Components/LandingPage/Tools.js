@@ -26,7 +26,7 @@ export const Tools = () => {
                     <Grid item xs={12} sm={6} md={4} lg={3}>
                         <Tool
                             title="Merge PDF"
-                            description="Combine multiple pdfs in your specified order into a single pdf document"
+                            description="Combine multiple pdfs in your specified order into a single pdf document."
                             image={merge}
                             link="/merge"
                         />

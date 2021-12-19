@@ -1,5 +1,14 @@
 import React from "react";
 import { Draggable, Droppable } from "react-beautiful-dnd";
+import {
+    Link,
+    DirectLink,
+    Element,
+    Events,
+    animateScroll as scroll,
+    scrollSpy,
+    scroller,
+} from "react-scroll";
 
 export const DisplayImage = ({ item, index }) => {
     return (

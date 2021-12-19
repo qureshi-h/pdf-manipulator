@@ -31,7 +31,7 @@ export const UploadFiles = ({
                 htmlFor="file-upload"
                 className="custom-file-upload uploadInput mergeInput"
             >
-                <i className="fa fa-cloud-upload"></i>Choose a PDF
+                <i className="fa fa-cloud-upload"></i>Choose one or more PDFs
             </label>
             <input
                 id="file-upload"
