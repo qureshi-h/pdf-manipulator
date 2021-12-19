@@ -247,3 +247,25 @@ input[type="file"] {
     display: block;
     border: none;
 }
+
+/* PDF To Image */
+
+.pdfToImage {
+    width: 100%;
+}
+
+.checkBox {
+    width: 2vw;
+    height: 3vh;
+}
+
+.checkBoxContainer {
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkBoxContainer:hover {
+    background-color: rgb(163, 162, 162);
+}

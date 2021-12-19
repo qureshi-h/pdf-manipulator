@@ -7,10 +7,10 @@ import { UploadFiles } from "../Components/PDFToImage/UploadFiles";
 import { Loader } from "../Components/UIElements/Loader";
 
 import { NavigationBar } from "../Components/UIElements/NavigationBar";
+import { DisplayImages } from "../Components/PDFToImage/DisplayImages";
 
 export const PDFToImagePage = () => {
-    const [selectedFiles, setSelectedFiles] = useState([]);
-    const [outFile, setOutFile] = useState(null);
+    const [images, setImages] = useState([]);
     const [loading, setLoading] = useState(false);
 
     return (
@@ -21,21 +21,13 @@ export const PDFToImagePage = () => {
             </Helmet>
 
             <NavigationBar />
-            <UploadFiles setLoading={setLoading} setImages={setLoading} />
+            <UploadFiles setLoading={setLoading} setImages={setImages} />
 
             {loading ? (
                 <Loader />
             ) : (
                 <div>
-                    {selectedFiles.length > 0 && !outFile && (
-                        <DisplayFiles
-                            selectedFiles={selectedFiles}
-                            setSelectedFiles={setSelectedFiles}
-                            setLoading={setLoading}
-                            setOutFile={setOutFile}
-                        />
-                    )}
-                    {outFile && <DisplayFile file={outFile} />}
+                    {images.length > 0 && <DisplayImages all_images={images} />}
                 </div>
             )}
         </div>
