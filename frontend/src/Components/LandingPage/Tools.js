@@ -36,7 +36,7 @@ export const Tools = () => {
                     <Grid item xs={12} sm={6} md={4} lg={3}>
                         <Tool
                             title="PDF to Image"
-                            description="Convert a PDF to Images and easily download one or more of them."
+                            description="Convert PDFs to Images and easily download one or more of them."
                             image={pdfToImage}
                             link="/pdftoimage"
                         />
