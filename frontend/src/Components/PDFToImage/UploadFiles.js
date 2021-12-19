@@ -20,21 +20,23 @@ export const UploadFiles = ({ setImages, setLoading }) => {
         const formData = new FormData();
 
         formData.append("id", 0);
-        formData.append("projectName", "merge");
+        formData.append("projectName", "PDFToImage");
 
         for (let i = 0; i < selectedFiles.length; i++) {
             formData.append("files", selectedFiles[i]);
         }
 
-        fetch("http://localhost:5001/pdf/pdfToImage/addPDF", {
-            method: "POST",
-            body: formData,
-        })
+        fetch(
+            "https://server-online-pdf-manager.herokuapp.com/pdf/pdfToImage/addPDF",
+            {
+                method: "POST",
+                body: formData,
+            }
+        )
             .then((response) => response.json())
             .then((data) => {
                 if (data.status_code === 200) {
-                    console.log(data);
-                    // setImages(data.images);
+                    setImages(data.images);
                     setLoading(false);
                 } else alert(data.status_message);
             });

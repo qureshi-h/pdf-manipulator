@@ -85,6 +85,7 @@ exports.pdfToImage = async (req, res) => {
         const { stdout, stderr } = spawnSync("python3", [
             "pdfmanipulation/pdf_to_image/pdf_to_image.py",
             files,
+            "https://server-online-pdf-manager.herokuapp.com/",
         ]);
 
         res.status(200).json({
