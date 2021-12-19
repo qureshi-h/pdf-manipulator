@@ -13,10 +13,6 @@ export const DisplayImages = ({ pdfImages, setOutFile, setLoading }) => {
         assignImages();
     }, [pdfImages]);
 
-    // useEffect(() => {
-    //     scroll();
-    // }, []);
-
     const scroll = () => {
         scroller.scrollTo("displayContainer", {
             duration: 800,

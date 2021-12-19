@@ -15,6 +15,7 @@ export const ReorganisePage = () => {
     return (
         <div>
             <Helmet>
+                <title>Online PDF Manager - Reorganise PDFs</title>
                 <style>{"body { background-color: #060026; }"}</style>
             </Helmet>
 
