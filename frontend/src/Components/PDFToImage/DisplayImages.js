@@ -27,11 +27,14 @@ export const DisplayImages = ({ all_images, setLoading }) => {
             .then((response) => response.json())
             .then((data) => {
                 if (data.status_code === 200) {
-                    fileSaver.saveAs(
-                        "https://server-online-pdf-manager.herokuapp.com/" +
-                            data.zip,
-                        `images.zip`
-                    );
+                    const url =
+                        "http://server-online-pdf-manager.herokuapp.com/" +
+                        data.zip;
+
+                    const win = window.open(url, "_blank");
+                    if (win != null) {
+                        win.focus();
+                    }
                     setLoading(false);
                 } else alert(data.status_message);
             });
