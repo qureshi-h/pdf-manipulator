@@ -7,6 +7,19 @@ import { DisplayImage } from "./DisplayImage";
 export const DisplayImages = ({ all_images, setLoading }) => {
     const [images, setImages] = useState([]);
 
+    const downloadZip = (url) => {
+        fetch(url).then((response) => {
+            response.blob().then((blob) => {
+                let url = window.URL.createObjectURL(blob);
+                let a = document.createElement("a");
+                a.href = url;
+                a.download = "images.zip";
+                a.click();
+            });
+            //window.location.href = response.url;
+        });
+    };
+
     const handleDone = () => {
         setLoading(true);
         fetch(
@@ -27,14 +40,19 @@ export const DisplayImages = ({ all_images, setLoading }) => {
             .then((response) => response.json())
             .then((data) => {
                 if (data.status_code === 200) {
-                    const url =
-                        "http://server-online-pdf-manager.herokuapp.com/" +
-                        data.zip;
+                    // const url =
+                    //     "http://server-online-pdf-manager.herokuapp.com/" +
+                    //     data.zip;
 
-                    const win = window.open(url, "_blank");
-                    if (win != null) {
-                        win.focus();
-                    }
+                    // const win = window.open(url, "_blank");
+                    // if (win != null) {
+                    //     win.focus();
+                    // }
+                    // downloadZip(
+                    //     "http://server-online-pdf-manager.herokuapp.com/" +
+                    //         data.zip
+                    // );
+                    downloadZip("http://localhost:5001/uploads/images.zip");
                     setLoading(false);
                 } else alert(data.status_message);
             });
