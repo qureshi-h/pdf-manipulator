@@ -34,4 +34,6 @@ router.post(
     pdfController.pdfToImage
 );
 
+router.post("/pdfToImage/zipImages", pdfController.zipImages);
+
 module.exports = router;

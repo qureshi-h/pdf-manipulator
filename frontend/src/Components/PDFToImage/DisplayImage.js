@@ -1,10 +1,10 @@
 import React from "react";
 
-export const DisplayImage = ({ image, index, handleChange }) => {
-    console.log(image);
+export const DisplayImage = ({ image, index, handleChange, onLoad }) => {
     return (
         <div>
             <img
+                onLoad={onLoad}
                 src={
                     "https://server-online-pdf-manager.herokuapp.com/" +
                     image.image

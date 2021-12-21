@@ -15,7 +15,7 @@ export function Tool({ title, image, description, link }) {
                     <Card
                         raised={true}
                         sx={{ boxShadow: 10 }}
-                        variant="outlined"
+                        // variant="outlined"
                         style={{ backgroundColor: "tool", boxShadow: "10px" }}
                     >
                         <CardHeader title={title}></CardHeader>
