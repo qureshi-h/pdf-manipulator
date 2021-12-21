@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
-
-import { DisplayFiles } from "../Components/MergePDF/DisplayFiles";
-import { DisplayFile } from "../Components/ReorganisePDF/DisplayFile";
 import { UploadFiles } from "../Components/PDFToImage/UploadFiles";
 import { Loader } from "../Components/UIElements/Loader";
 
@@ -27,7 +24,12 @@ export const PDFToImagePage = () => {
                 <Loader />
             ) : (
                 <div>
-                    {images.length > 0 && <DisplayImages all_images={images} />}
+                    {images.length > 0 && (
+                        <DisplayImages
+                            all_images={images}
+                            setLoading={setLoading}
+                        />
+                    )}
                 </div>
             )}
         </div>

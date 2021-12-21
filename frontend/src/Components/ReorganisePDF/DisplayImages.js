@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { DragDropContext } from "react-beautiful-dnd";
 import { v4 as uuid } from "uuid";
 import { Grid } from "@mui/material";
-import { Element, scroller } from "react-scroll";
+import { scroller } from "react-scroll";
 
 import { DisplayImage } from "./DisplayImage";
 
@@ -70,58 +70,53 @@ export const DisplayImages = ({ pdfImages, setOutFile, setLoading }) => {
     };
 
     return (
-        <Element name="scroll-to-element">
-            <div
-                style={{ marginLeft: "5vw", width: "90vw" }}
-                id="displayContainer"
-            >
-                <div style={{ width: "95vw", justifyContent: "center" }}>
-                    <button
-                        type="button"
-                        className="btn btn-light btn-lg doneButton"
-                        onClick={handleDone}
+        <div style={{ marginLeft: "5vw", width: "90vw" }} id="displayContainer">
+            <div style={{ width: "95vw", justifyContent: "center" }}>
+                <button
+                    type="button"
+                    className="btn btn-light btn-lg doneButton"
+                    onClick={handleDone}
+                >
+                    <h4
+                        style={{
+                            color: "black",
+                            margin: "auto 1vw auto 1vw",
+                        }}
                     >
-                        <h4
-                            style={{
-                                color: "black",
-                                margin: "auto 1vw auto 1vw",
-                            }}
-                        >
-                            Done
-                        </h4>
-                    </button>
-                </div>
-
-                <div className="imageContainer" id="imageContainer">
-                    <Grid container spacing={3}>
-                        <DragDropContext
-                            onDragEnd={(result) =>
-                                onDragEnd(result, images, SetImages)
-                            }
-                        >
-                            {images.map((item, index) => {
-                                return (
-                                    <Grid
-                                        item
-                                        xs={12}
-                                        sm={6}
-                                        md={3}
-                                        lg={2}
-                                        key={index}
-                                    >
-                                        <DisplayImage
-                                            item={item}
-                                            index={index}
-                                            onLoad={scroll}
-                                            handleDelete={handleDelete}
-                                        />
-                                    </Grid>
-                                );
-                            })}
-                        </DragDropContext>
-                    </Grid>
-                </div>
+                        Done
+                    </h4>
+                </button>
             </div>
-        </Element>
+
+            <div className="imageContainer" id="imageContainer">
+                <Grid container spacing={3}>
+                    <DragDropContext
+                        onDragEnd={(result) =>
+                            onDragEnd(result, images, SetImages)
+                        }
+                    >
+                        {images.map((item, index) => {
+                            return (
+                                <Grid
+                                    item
+                                    xs={12}
+                                    sm={6}
+                                    md={3}
+                                    lg={2}
+                                    key={index}
+                                >
+                                    <DisplayImage
+                                        item={item}
+                                        index={index}
+                                        onLoad={scroll}
+                                        handleDelete={handleDelete}
+                                    />
+                                </Grid>
+                            );
+                        })}
+                    </DragDropContext>
+                </Grid>
+            </div>
+        </div>
     );
 };

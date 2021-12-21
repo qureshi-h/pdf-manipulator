@@ -1,4 +1,9 @@
 import sys
+
+import subprocess
+
+# subprocess.check_call([sys.executable, "-m", "pip", "install", "pdf2image"])
+
 from pdf2image import convert_from_path
 
 pdfs = [pdf for pdf in sys.argv[1].split(",")]
