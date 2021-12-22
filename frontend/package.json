@@ -34,6 +34,7 @@
     "react-router-dom": "^6.1.1",
     "react-scripts": "4.0.3",
     "react-scroll": "^1.8.4",
+    "react-scrollable-anchor": "^0.6.1",
     "uuid": "^8.3.2",
     "uuid4": "^2.0.2",
     "web-vitals": "^1.1.2"

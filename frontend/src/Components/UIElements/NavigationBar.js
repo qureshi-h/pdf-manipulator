@@ -17,24 +17,12 @@ export const NavigationBar = () => {
                 <Link to="/">
                     <img className="navbarLogo" src={logo} alt="logo" />
                 </Link>
-
                 <Link to="/">
                     <h4 className="navbarText">Home</h4>
                 </Link>
-
-                <Lynk
-                    activeClass="active"
-                    to="Tools"
-                    spy={false}
-                    smooth={false}
-                    offset={0}
-                    duration={500}
-                >
-                    <Link to="/">
-                        <h4 className="navbarText">Tools</h4>{" "}
-                    </Link>
-                </Lynk>
-
+                <Link to="/#tools">
+                    <h4 className="navbarText">Tools</h4>
+                </Link>
                 <h4 className="navbarText">About</h4>
             </div>
 
