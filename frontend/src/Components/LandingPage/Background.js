@@ -3,12 +3,13 @@ import { Link } from "react-scroll";
 
 import background from "../../res/LandingPage.jpg";
 
-export const Background = () => {
+export const Background = ({ setLoading }) => {
     return (
         <div className="background">
             <img
-                className="backgroundImage"
+                onLoad={() => setLoading(false)}
                 src={background}
+                className="backgroundImage"
                 alt={"Background"}
             />
 
