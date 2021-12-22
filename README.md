@@ -1,6 +1,6 @@
 # Online PDF Manager
 
-An online tool to easily manipulate pdf files. Hosted at [Named Link](http://www.onlinepdfmanager.com/ "Online PDF Manager").
+An online tool to easily manipulate pdf files. Hosted at [Online PDF Manager](http://www.onlinepdfmanager.com/ "Online PDF Manager").
 Currently the following features are supported:
 
 -   Reorder the pages of a pdf
