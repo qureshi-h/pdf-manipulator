@@ -16,7 +16,7 @@ export const MergePage = () => {
     return (
         <div>
             <Helmet>
-                <title>Online PDF Manager - Merge PDFs</title>
+                <title>Online PDF Manager | Merge PDFs</title>
                 <style>{"body { background-color: #060026; }"}</style>
             </Helmet>
 
