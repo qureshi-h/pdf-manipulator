@@ -40,19 +40,10 @@ export const DisplayImages = ({ all_images, setLoading }) => {
             .then((response) => response.json())
             .then((data) => {
                 if (data.status_code === 200) {
-                    // const url =
-                    //     "http://server-online-pdf-manager.herokuapp.com/" +
-                    //     data.zip;
-
-                    // const win = window.open(url, "_blank");
-                    // if (win != null) {
-                    //     win.focus();
-                    // }
-                    // downloadZip(
-                    //     "http://server-online-pdf-manager.herokuapp.com/" +
-                    //         data.zip
-                    // );
-                    downloadZip("http://localhost:5001/uploads/images.zip");
+                    downloadZip(
+                        "https://server-online-pdf-manager.herokuapp.com/" +
+                            data.zip
+                    );
                     setLoading(false);
                 } else alert(data.status_message);
             });
