@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Link as Lynk } from "react-scroll";
 
 import logo from "../../res/Logo2.png";
 
@@ -21,7 +22,19 @@ export const NavigationBar = () => {
                     <h4 className="navbarText">Home</h4>
                 </Link>
 
-                <h4 className="navbarText">Tools</h4>
+                <Lynk
+                    activeClass="active"
+                    to="Tools"
+                    spy={false}
+                    smooth={false}
+                    offset={0}
+                    duration={500}
+                >
+                    <Link to="/">
+                        <h4 className="navbarText">Tools</h4>{" "}
+                    </Link>
+                </Lynk>
+
                 <h4 className="navbarText">About</h4>
             </div>
 
