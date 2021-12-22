@@ -6,6 +6,7 @@ import { ToolsHeader } from "./ToolsHeader";
 
 import reorder from "../../res/Reorder.png";
 import merge from "../../res/Merge.png";
+import imageToPdf from "../../res/image_to_pdf.png";
 import pdfToImage from "../../res/pdf_to_image.png";
 
 export const Tools = () => {
@@ -30,6 +31,15 @@ export const Tools = () => {
                             description="Combine multiple pdfs in your specified order into a single pdf document."
                             image={merge}
                             link="/merge"
+                        />
+                    </Grid>
+
+                    <Grid item xs={12} sm={6} md={4} lg={3}>
+                        <Tool
+                            title="Image To PDF"
+                            description="Convert one more more images into a pdf file at the touch of a button."
+                            image={imageToPdf}
+                            link="/imagetopdf"
                         />
                     </Grid>
 

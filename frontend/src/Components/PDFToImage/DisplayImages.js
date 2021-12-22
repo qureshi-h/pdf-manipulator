@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import fileSaver from "file-saver";
 import { Grid } from "@mui/material";
 import { scroller } from "react-scroll";
 import { DisplayImage } from "./DisplayImage";
@@ -16,7 +15,6 @@ export const DisplayImages = ({ all_images, setLoading }) => {
                 a.download = "images.zip";
                 a.click();
             });
-            //window.location.href = response.url;
         });
     };
 
