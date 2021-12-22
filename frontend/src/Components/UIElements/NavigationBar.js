@@ -36,14 +36,32 @@ export const NavigationBar = () => {
                     type="button"
                     className="btn btn-primary btn-lg navbarButton"
                 >
-                    <h4 style={{ padding: "0vh 1.5vw 0vh 1.5vw" }}>Sign Up</h4>
+                    <h4
+                        style={{
+                            padding: "0vh 1.5vw 0vh 1.5vw",
+                            height: "100%",
+                            alignItems: "center",
+                            display: "flex",
+                        }}
+                    >
+                        Sign Up
+                    </h4>
                 </button>
 
                 <button
                     type="button"
                     className="btn btn-outline-primary btn-lg navbarButton"
                 >
-                    <h4 style={{ padding: "0vh 1.5vw 0vh 1.5vw" }}>Login</h4>
+                    <h4
+                        style={{
+                            padding: "0vh 1.5vw 0vh 1.5vw",
+                            height: "100%",
+                            alignItems: "center",
+                            display: "flex",
+                        }}
+                    >
+                        Login
+                    </h4>
                 </button>
             </div>
         </div>

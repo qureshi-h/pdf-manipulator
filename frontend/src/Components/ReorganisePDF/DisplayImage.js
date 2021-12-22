@@ -47,7 +47,7 @@ export const DisplayImage = ({ item, index, onLoad, handleDelete }) => {
                                             <img
                                                 onLoad={onLoad}
                                                 src={
-                                                    "https://server-online-pdf-manager.herokuapp.com/" +
+                                                    "http://localhost:5001/" +
                                                     item.image
                                                 }
                                                 className="image"
