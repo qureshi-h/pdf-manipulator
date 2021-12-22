@@ -23,7 +23,7 @@ export const DisplayImages = ({ pdfImages, setOutFile, setLoading }) => {
 
     const assignImages = () => {
         const images = [];
-        for (var i = 0; i < pdfImages.length - 1; i++) {
+        for (var i = 0; i < pdfImages.length; i++) {
             images.push({ id: uuid(), image: pdfImages[i] });
         }
         SetImages(images);

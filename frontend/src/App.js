@@ -6,6 +6,7 @@ import { ReorganisePage } from "./Pages/ReorganisePage";
 import { MergePage } from "./Pages/MergePage";
 import { PDFToImagePage } from "./Pages/PDFToImagePage";
 import { LandingPage } from "./Pages/LandingPage";
+import { ImageToPDFPage } from "./Pages/ImageToPDFPage";
 
 function App() {
     return (
@@ -23,6 +24,11 @@ function App() {
                         exact
                         path="/pdftoimage"
                         element={<PDFToImagePage />}
+                    />
+                    <Route
+                        exact
+                        path="/imagetopdf"
+                        element={<ImageToPDFPage />}
                     />
                 </Routes>
             </BrowserRouter>
