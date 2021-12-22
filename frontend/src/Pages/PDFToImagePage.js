@@ -13,7 +13,7 @@ export const PDFToImagePage = () => {
     return (
         <div>
             <Helmet>
-                <title>Online PDF Manager - PDF to Image</title>
+                <title>Online PDF Manager | PDF to Image</title>
                 <style>{"body { background-color: #060026; }"}</style>
             </Helmet>
 

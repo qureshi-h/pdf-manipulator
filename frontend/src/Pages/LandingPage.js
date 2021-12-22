@@ -12,11 +12,14 @@ export const LandingPage = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Online PDF Manager | Home</title>
+                <style>{"body { background-color: #060026; }"}</style>
+            </Helmet>
+
             {loading && <Loader />}
             <div style={{ display: loading ? "none" : "block" }}>
-                <Helmet>
-                    <title>Online PDF Manager - Home</title>
-                </Helmet>
+                ]
                 <Background setLoading={setLoading} />
                 <Tools />
                 <NavigationBar />
