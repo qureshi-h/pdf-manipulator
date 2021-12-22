@@ -12,9 +12,9 @@ export const LandingPage = () => {
 
     return (
         <div>
-            {/* <Helmet>
+            <Helmet>
                 <title>Online PDF Manager | Home</title>
-            </Helmet> */}
+            </Helmet>
 
             {loading && (
                 <div>
