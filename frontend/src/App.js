@@ -8,11 +8,13 @@ import { MergePage } from "./Pages/MergePage";
 import { PDFToImagePage } from "./Pages/PDFToImagePage";
 import { LandingPage } from "./Pages/LandingPage";
 import { ImageToPDFPage } from "./Pages/ImageToPDFPage";
+import ScrollToTop from "./Components/UIElements/ScrollToTop";
 
 function App() {
     return (
         <div className="App">
             <BrowserRouter>
+                <ScrollToTop />
                 <Routes>
                     <Route exact path="/" element={<LandingPage />} />
                     <Route

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Link as Lynk } from "react-scroll";
 
 import logo from "../../res/Logo2.png";
 
@@ -16,12 +17,12 @@ export const NavigationBar = () => {
                 <Link to="/">
                     <img className="navbarLogo" src={logo} alt="logo" />
                 </Link>
-
                 <Link to="/">
                     <h4 className="navbarText">Home</h4>
                 </Link>
-
-                <h4 className="navbarText">Tools</h4>
+                <Link to="/#tools">
+                    <h4 className="navbarText">Tools</h4>
+                </Link>
                 <h4 className="navbarText">About</h4>
             </div>
 
