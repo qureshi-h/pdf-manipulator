@@ -57,12 +57,13 @@ exports.submitPDF = async (req, res) => {
 
 exports.mergeAdd = async (req, res) => {
     try {
+        const { bookmark } = req.body;
+        const script = bookmark
+            ? "pdfmanipulation/merge/merge-bookmarked.py"
+            : "pdfmanipulation/merge/merge.py";
         const files = req.files.map((file) => file.path);
 
-        const { stdout, stderr } = spawnSync("python3", [
-            "pdfmanipulation/merge/merge-bookmarked.py",
-            files,
-        ]);
+        const { stdout, stderr } = spawnSync("python3", [script, files]);
 
         res.status(200).json({
             status_code: 200,

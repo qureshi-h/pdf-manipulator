@@ -8,6 +8,7 @@ export const DisplayFiles = ({
     setLoading,
     setOutFile,
 }) => {
+    const [bookmark, setBookmark] = React.useState(false);
     const handleDelete = (id) => {
         setSelectedFiles(selectedFiles.filter((item) => item.id !== id));
     };
@@ -29,6 +30,7 @@ export const DisplayFiles = ({
 
         formData.append("id", 0);
         formData.append("projectName", "merge");
+        formData.append("bookmark", bookmark);
 
         for (let i = 0; i < selectedFiles.length; i++) {
             formData.append("files", selectedFiles[i].file);
@@ -69,7 +71,7 @@ export const DisplayFiles = ({
                     className="btn btn-light btn-lg doneButton"
                     onClick={handleDone}
                 >
-                    <h4 style={{ color: "black" }}>Done</h4>
+                    <h4 style={{ color: "black", margin: 0 }}>Done</h4>
                 </button>
 
                 <button
@@ -96,6 +98,21 @@ export const DisplayFiles = ({
                         );
                     })}
                 </DragDropContext>
+
+                <label
+                    htmlFor="bookmark-check"
+                    className="custom-file-upload uploadInput checkBoxInput"
+                >
+                    <i className="fa fa-cloud-upload"></i>Add Bookmark
+                </label>
+                <input
+                    type="checkbox"
+                    id="bookmark-check"
+                    value={bookmark}
+                    onChange={() => {
+                        setBookmark(!bookmark);
+                    }}
+                />
             </div>
         </div>
     );

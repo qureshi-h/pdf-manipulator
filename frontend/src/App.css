@@ -269,3 +269,8 @@ input[type="file"] {
 .checkBoxContainer:hover {
     background-color: rgb(163, 162, 162);
 }
+
+.checkBoxInput {
+    color: black;
+    font-size: 1.1em;
+}
