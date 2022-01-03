@@ -1,7 +1,4 @@
 const pdf = require("../models/pdf");
-const multer = require("multer");
-const upload = multer();
-const JSZip = require("jszip");
 
 const { spawnSync } = require("child_process");
 
@@ -58,9 +55,12 @@ exports.submitPDF = async (req, res) => {
 exports.mergeAdd = async (req, res) => {
     try {
         const { bookmark } = req.body;
-        const script = bookmark
-            ? "pdfmanipulation/merge/merge-bookmarked.py"
-            : "pdfmanipulation/merge/merge.py";
+        const script =
+            bookmark === "true"
+                ? "pdfmanipulation/merge/merge-bookmarked.py"
+                : "pdfmanipulation/merge/merge.py";
+
+        console.log(bookmark, script);
         const files = req.files.map((file) => file.path);
 
         const { stdout, stderr } = spawnSync("python3", [script, files]);
