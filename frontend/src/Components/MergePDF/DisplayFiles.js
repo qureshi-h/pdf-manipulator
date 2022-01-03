@@ -37,7 +37,8 @@ export const DisplayFiles = ({
         }
 
         fetch(
-            "https://server-online-pdf-manager.herokuapp.com/pdf/merge/addPDF",
+            // "https://server-online-pdf-manager.herokuapp.com/pdf/merge/addPDF",
+            "http://localhost:5001/pdf/merge/addPDF",
             {
                 method: "POST",
                 body: formData,
