@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Link as Lynk } from "react-scroll";
+
+import LoginInBox from "./LoginInBox";
 
 import logo from "../../res/Logo2.png";
 

@@ -21,7 +21,6 @@ export const DisplayFile = ({ file }) => {
         const titleElement = document.getElementById("pdfContainer");
         titleElement.scrollIntoView({ behavior: "smooth" });
     };
-
     return (
         <div className="pdf-container" id="pdfContainer">
             <>
