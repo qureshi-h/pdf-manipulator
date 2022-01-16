@@ -43,11 +43,35 @@ export const LogInBox = ({ showModal, initialTab, setShowModel }) => {
         const password = document.querySelector("#password").value;
 
         if (!email || !password) {
-            setState({
-                error: true,
-            });
+            setState({ error: true });
         } else {
-            onLoginSuccess("form");
+            fetch(
+                "https://server-online-pdf-manager.herokuapp.com/auth/authenticateUser",
+                {
+                    method: "POST",
+                    headers: new Headers({
+                        "Content-Type": "application/json",
+                        Accept: "application/json",
+                    }),
+                    body: JSON.stringify({
+                        email,
+                        password,
+                    }),
+                }
+            )
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+                    if (data.status_code === 200) {
+                        if (data.result) {
+                            localStorage.setItem("name", data.name);
+                            localStorage.setItem("picture", data.picture);
+                            setShowModel(false);
+                        } else {
+                            setState({ error: true });
+                        }
+                    } else alert(data.status_message);
+                });
         }
     };
 
@@ -57,9 +81,7 @@ export const LogInBox = ({ showModal, initialTab, setShowModel }) => {
         const password = document.querySelector("#password").value;
 
         if (!login || !email || !password) {
-            setState({
-                error: true,
-            });
+            setState({ error: true });
         } else {
             addUser(login, email, password, "none");
         }
@@ -128,10 +150,7 @@ export const LogInBox = ({ showModal, initialTab, setShowModel }) => {
     };
 
     const startLoading = () => {
-        setState({
-            ...state,
-            loading: true,
-        });
+        setState({ ...state, loading: true });
     };
 
     const finishLoading = () => {
