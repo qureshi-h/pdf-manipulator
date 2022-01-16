@@ -4,8 +4,9 @@ const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
 exports.addUser = async (req, res) => {
-    let { name, email, password, picture } = req.body;
     try {
+        const { name, email, password, picture } = req.body;
+
         bcrypt.genSalt(saltRounds, (error, salt) => {
             if (error) throw error;
             bcrypt.hash(password, salt, async (error, hash) => {
@@ -18,6 +19,27 @@ exports.addUser = async (req, res) => {
                 }
             });
         });
+    } catch (error) {
+        res.status(400).json({
+            status_code: 400,
+            status_message: error.message,
+        });
+    }
+};
+
+exports.authenticateUser = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        const passwordHash = await Register.getPassword(email);
+
+        bcrypt.compare(
+            password,
+            passwordHash.rows[0].password,
+            (error, result) => {
+                if (error) throw error;
+                res.status(200).json({ status_code: 200, result });
+            }
+        );
     } catch (error) {
         res.status(400).json({
             status_code: 400,
