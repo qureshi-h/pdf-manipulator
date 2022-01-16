@@ -30,17 +30,21 @@ exports.addUser = async (req, res) => {
 exports.authenticateUser = async (req, res) => {
     try {
         const { email, password } = req.body;
-        const queryResult = await Register.getPassword(email).rows[0];
+        const queryResult = await Register.getPassword(email);
 
-        bcrypt.compare(password, queryResult.password, (error, result) => {
-            if (error) throw error;
-            res.status(200).json({
-                status_code: 200,
-                result,
-                name: queryResult.name,
-                picture: queryResult.picture,
-            });
-        });
+        bcrypt.compare(
+            password,
+            queryResult.rows[0].password,
+            (error, result) => {
+                if (error) throw error;
+                res.status(200).json({
+                    status_code: 200,
+                    result,
+                    name: queryResult.rows[0].name,
+                    picture: queryResult.rows[0].picture,
+                });
+            }
+        );
     } catch (error) {
         res.status(400).json({
             status_code: 400,
