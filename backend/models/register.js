@@ -11,7 +11,7 @@ class Register {
     }
 
     static getPassword(email) {
-        let query = "SELECT password FROM users WHERE email=$1";
+        let query = "SELECT name, password, picture FROM users WHERE email=$1";
         return postgres.query(query, [email]);
     }
 }
