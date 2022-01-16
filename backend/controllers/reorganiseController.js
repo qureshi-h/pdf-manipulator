@@ -2,11 +2,6 @@ const { spawnSync } = require("child_process");
 
 exports.addPDF = async (req, res) => {
     try {
-        // let [result] = await pdf.add(
-        //     req.file.originalname.split(".")[0],
-        //     req.file.path
-        // );
-
         const { stdout, stderr } = spawnSync("python3", [
             "pdfmanipulation/reorganise/pdf_to_image.py",
             req.file.path,

@@ -1,7 +1,3 @@
-const pdf = require("../models/pdf");
-
-const { spawnSync } = require("child_process");
-
 exports.addImages = async (req, res) => {
     try {
         const images = req.files.map((file) => file.path);

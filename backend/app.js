@@ -3,10 +3,11 @@ const path = require("path");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
-const reorganiseRouter = require("./routes/reorganiseRoutes");
-const mergeController = require("./routes/mergeRoutes");
-const pdfToImageController = require("./routes/reorganiseRoutes");
-const imageToPDFController = require("./routes/imageToPDFRoutes");
+const reorganiseRoutes = require("./routes/reorganiseRoutes");
+const mergeRoutes = require("./routes/mergeRoutes");
+const pdfToImageRoutes = require("./routes/reorganiseRoutes");
+const imageToPDFRoutes = require("./routes/imageToPDFRoutes");
+const authenticationRoutes = require("./routes/authenticationRoutes");
 
 const PORT = process.env.PORT || 5001;
 
@@ -20,10 +21,12 @@ app.use(cors());
 app.use("/uploads", express.static("uploads"));
 
 // define routes
-app.use("/pdf", reorganiseRouter);
-app.use("/pdf", mergeController);
-app.use("/pdf", pdfToImageController);
-app.use("/pdf", imageToPDFController);
+app.use("/pdf", reorganiseRoutes);
+app.use("/pdf", mergeRoutes);
+app.use("/pdf", pdfToImageRoutes);
+app.use("/pdf", imageToPDFRoutes);
+
+app.use("/auth", authenticationRoutes);
 
 app.listen(PORT, function () {
     console.log("CORS-enabled web server listening on port", PORT);
