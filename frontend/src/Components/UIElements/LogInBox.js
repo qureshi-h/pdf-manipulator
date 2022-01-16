@@ -12,11 +12,33 @@ export const LogInBox = ({ showModal, initialTab, setShowModel }) => {
         recoverPasswordSuccess: null,
     });
 
-    const onLogin = async (e, a, c) => {
-        console.log(e, a, c);
-        console.log("email: " + document.querySelector("#email").value);
-        console.log("password: " + document.querySelector("#password").value);
+    const addUser = (name, email, password, picture) => {
+        fetch("https://localhost:5001/auth/addUser", {
+            method: "POST",
+            headers: new Headers({
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            }),
+            body: JSON.stringify({
+                name,
+                email,
+                password,
+                picture: "none",
+            }),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                if (data.status_code === 200) {
+                    localStorage.setItem("name", name);
+                    localStorage.setItem("picture", picture);
+                    localStorage.setItem("loggedIn", true);
+                    setShowModel(false);
+                } else alert(data.status_message);
+            });
+    };
 
+    const onLogin = async (e, a, c) => {
         const email = document.querySelector("#email").value;
         const password = document.querySelector("#password").value;
 
@@ -30,10 +52,6 @@ export const LogInBox = ({ showModal, initialTab, setShowModel }) => {
     };
 
     const onRegister = () => {
-        console.log("login: " + document.querySelector("#login").value);
-        console.log("email: " + document.querySelector("#email").value);
-        console.log("password: " + document.querySelector("#password").value);
-
         const login = document.querySelector("#login").value;
         const email = document.querySelector("#email").value;
         const password = document.querySelector("#password").value;
@@ -43,7 +61,7 @@ export const LogInBox = ({ showModal, initialTab, setShowModel }) => {
                 error: true,
             });
         } else {
-            onLoginSuccess("form");
+            addUser(login, email, password, "none");
         }
     };
 
@@ -74,33 +92,22 @@ export const LogInBox = ({ showModal, initialTab, setShowModel }) => {
                 { fields: "name, email, picture" },
                 function (response) {
                     if (response && !response.error) {
-                        localStorage.setItem(
-                            "name",
-                            response.name.split(" ")[0]
-                        );
-                        localStorage.setItem(
-                            "picture",
+                        addUser(
+                            response.name,
+                            response.email,
+                            null,
                             response.picture.data.url
                         );
-                        localStorage.setItem("loggedIn", true);
-                        setShowModel(false);
                     }
                 }
             );
         } else if (method === "google") {
-            localStorage.setItem(
-                "name",
-                window.gapi.auth2
-                    .getAuthInstance()
-                    .currentUser.Mb.su.qf.split(" ")[0]
+            addUser(
+                window.gapi.auth2.getAuthInstance().currentUser.Mb.su.qf,
+                window.gapi.auth2.getAuthInstance().currentUser.Mb.su.ev,
+                null,
+                "none"
             );
-            localStorage.setItem("picture", "none");
-            localStorage.setItem("loggedIn", true);
-            setShowModel(false);
-
-            // console.log(
-            //     window.gapi.auth2.getAuthInstance().currentUser.Mb.su.ev
-            // );
         }
 
         setState({
