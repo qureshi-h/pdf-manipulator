@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-import LoginInBox from "./LoginInBox";
+// import { LogInBox } from "./LoginBox";
 
 import logo from "../../res/Logo2.png";
 
 export const NavigationBar = () => {
+    const [login, setLogin] = React.useState(true);
     return (
         <div className="navbar">
             <div
@@ -53,6 +53,9 @@ export const NavigationBar = () => {
                 <button
                     type="button"
                     className="btn btn-outline-primary btn-lg navbarButton"
+                    onClick={() => {
+                        setLogin(true);
+                    }}
                 >
                     <h4
                         style={{

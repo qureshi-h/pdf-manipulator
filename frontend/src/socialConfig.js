@@ -1,15 +1,16 @@
 const facebook = {
-    appId: "449924903284446",
+    appId: "437139531489037",
     cookie: true,
     xfbml: true,
     version: "v12.0",
-    scope: "email",
+    scope: "picture profile email",
 };
 
 export const facebookConfig = facebook;
 
 const google = {
-    client_id: "YOUR_CLIENT_ID.apps.googleusercontent.com",
+    client_id:
+        "955868809195-vfgl7ijhtbni95pnra6bbevqhtltvclq.apps.googleusercontent.com",
     scope: "profile email",
 };
 

@@ -6,9 +6,10 @@ import { Background } from "../Components/LandingPage/Background";
 import { Tools } from "../Components/LandingPage/Tools";
 import { NavigationBar } from "../Components/UIElements/NavigationBar";
 import { Helmet } from "react-helmet";
+import { LogInBox } from "../Components/UIElements/LogInBox";
 
 export const LandingPage = () => {
-    const [loading, setLoading] = React.useState(true);
+    const [loading, setLoading] = React.useState(false);
 
     return (
         <div>
@@ -24,11 +25,12 @@ export const LandingPage = () => {
                     <Loader />
                 </div>
             )}
-            <div style={{ display: loading ? "none" : "block" }}>
+            {/* <div style={{ display: loading ? "none" : "block" }}>
                 <Background setLoading={setLoading} />
                 <Tools />
                 <NavigationBar />
-            </div>
+            </div> */}
+            <LogInBox />
         </div>
     );
 };
