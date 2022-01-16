@@ -66,6 +66,7 @@ export const LogInBox = ({ showModal, initialTab, setShowModel }) => {
                         if (data.result) {
                             localStorage.setItem("name", data.name);
                             localStorage.setItem("picture", data.picture);
+                            localStorage.setItem("loggedIn", true);
                             setShowModel(false);
                         } else {
                             setState({ error: true });
