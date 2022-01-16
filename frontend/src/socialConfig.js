@@ -3,7 +3,7 @@ const facebook = {
     cookie: true,
     xfbml: true,
     version: "v12.0",
-    scope: "picture profile email",
+    scope: "email",
 };
 
 export const facebookConfig = facebook;

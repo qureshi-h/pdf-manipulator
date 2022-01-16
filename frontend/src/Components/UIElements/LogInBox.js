@@ -4,13 +4,11 @@ import "react-modal-login/dist/react-modal-login.css";
 
 import { facebookConfig, googleConfig } from "../../socialConfig";
 
-export const LogInBox = (props) => {
+export const LogInBox = ({ showModal, initialTab, setShowModel }) => {
     const [state, setState] = useState({
-        showModal: false,
         loggedIn: null,
         loading: false,
         error: null,
-        initialTab: null,
         recoverPasswordSuccess: null,
     });
 
@@ -69,16 +67,9 @@ export const LogInBox = (props) => {
         }
     };
 
-    const openModal = (initialTab) => {
-        setState({
-            ...state,
-            initialTab: initialTab,
-            showModal: true,
-        });
-    };
-
     const onLoginSuccess = (method, response) => {
         if (method === "facebook") {
+            console.log(response);
             window.FB.api(
                 "/" + response.authResponse.userID + "/",
                 { fields: "name, email, picture" },
@@ -99,11 +90,11 @@ export const LogInBox = (props) => {
 
         setState({
             ...state,
-            showModal: false,
             error: null,
             loggedIn: method,
             loading: false,
         });
+        setShowModel(false);
     };
 
     const onLoginFail = (method, response) => {
@@ -140,10 +131,10 @@ export const LogInBox = (props) => {
     const closeModal = () => {
         setState({
             ...state,
-            showModal: false,
             error: null,
             loading: false,
         });
+        setShowModel(false);
     };
 
     const loggedIn = state.loggedIn ? (
@@ -160,19 +151,11 @@ export const LogInBox = (props) => {
 
     return (
         <div>
-            <button className="RML-btn" onClick={() => openModal("login")}>
-                Login
-            </button>
-
-            <button className="RML-btn" onClick={() => openModal("register")}>
-                Register
-            </button>
-
             <ReactModalLogin
-                visible={state.showModal}
+                visible={showModal}
                 onCloseModal={closeModal}
                 loading={isLoading}
-                initialTab={state.initialTab}
+                initialTab={initialTab}
                 error={state.error}
                 tabs={{
                     afterChange: afterTabsChange,
@@ -224,12 +207,12 @@ export const LogInBox = (props) => {
                     registerInputs: [
                         {
                             containerClass: "RML-form-group",
-                            label: "Nickname",
+                            label: "Name",
                             type: "text",
                             inputClass: "RML-form-control",
                             id: "login",
                             name: "login",
-                            placeholder: "Nickname",
+                            placeholder: "Name",
                         },
                         {
                             containerClass: "RML-form-group",
