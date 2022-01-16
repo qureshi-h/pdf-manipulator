@@ -11,6 +11,7 @@ import { ImageToPDFPage } from "./Pages/ImageToPDFPage";
 import ScrollToTop from "./Components/UIElements/ScrollToTop";
 
 function App() {
+    localStorage.setItem("loggedIn", false);
     return (
         <div className="App">
             <BrowserRouter>

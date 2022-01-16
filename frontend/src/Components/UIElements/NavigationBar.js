@@ -4,13 +4,14 @@ import { LogInBox } from "./LogInBox";
 
 import logo from "../../res/Logo2.png";
 import { LoginButtons } from "./LoginButtons";
+import { UserProfile } from "./UserProfile";
 
 export const NavigationBar = () => {
     const [showModal, setShowModal] = React.useState(false);
     const [initialTab, setInitialTab] = React.useState("login");
 
     return (
-        <div style={{ height: "100vh" }}>
+        <div>
             <div className="navbar">
                 <div
                     style={{
@@ -31,10 +32,14 @@ export const NavigationBar = () => {
                     <h4 className="navbarText">About</h4>
                 </div>
 
-                <LoginButtons
-                    setShowModal={setShowModal}
-                    setInitialTab={setInitialTab}
-                />
+                {localStorage.getItem("loggedIn") === "true" ? (
+                    <UserProfile />
+                ) : (
+                    <LoginButtons
+                        setShowModal={setShowModal}
+                        setInitialTab={setInitialTab}
+                    />
+                )}
             </div>
             <LogInBox
                 showModal={showModal}

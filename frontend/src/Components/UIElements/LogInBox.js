@@ -69,23 +69,38 @@ export const LogInBox = ({ showModal, initialTab, setShowModel }) => {
 
     const onLoginSuccess = (method, response) => {
         if (method === "facebook") {
-            console.log(response);
             window.FB.api(
                 "/" + response.authResponse.userID + "/",
                 { fields: "name, email, picture" },
                 function (response) {
                     if (response && !response.error) {
-                        console.log(response);
+                        localStorage.setItem(
+                            "name",
+                            response.name.split(" ")[0]
+                        );
+                        localStorage.setItem(
+                            "picture",
+                            response.picture.data.url
+                        );
+                        localStorage.setItem("loggedIn", true);
+                        setShowModel(false);
                     }
                 }
             );
         } else if (method === "google") {
-            console.log(
-                window.gapi.auth2.getAuthInstance().currentUser.Mb.su.qf
+            localStorage.setItem(
+                "name",
+                window.gapi.auth2
+                    .getAuthInstance()
+                    .currentUser.Mb.su.qf.split(" ")[0]
             );
-            console.log(
-                window.gapi.auth2.getAuthInstance().currentUser.Mb.su.ev
-            );
+            localStorage.setItem("picture", "none");
+            localStorage.setItem("loggedIn", true);
+            setShowModel(false);
+
+            // console.log(
+            //     window.gapi.auth2.getAuthInstance().currentUser.Mb.su.ev
+            // );
         }
 
         setState({
@@ -94,7 +109,6 @@ export const LogInBox = ({ showModal, initialTab, setShowModel }) => {
             loggedIn: method,
             loading: false,
         });
-        setShowModel(false);
     };
 
     const onLoginFail = (method, response) => {
