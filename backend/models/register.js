@@ -9,6 +9,11 @@ class Register {
                         DO UPDATE SET picture=$4";
         return postgres.query(query, values);
     }
+
+    static getPassword(email) {
+        let query = "SELECT password FROM users WHERE email=$1";
+        return postgres.query(query, [email]);
+    }
 }
 
 module.exports = Register;
