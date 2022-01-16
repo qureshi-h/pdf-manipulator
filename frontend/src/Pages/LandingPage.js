@@ -8,7 +8,7 @@ import { NavigationBar } from "../Components/UIElements/NavigationBar";
 import { Helmet } from "react-helmet";
 
 export const LandingPage = () => {
-    const [loading, setLoading] = React.useState(true);
+    const [loading, setLoading] = React.useState(false);
 
     return (
         <div>

@@ -1,70 +1,51 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Link as Lynk } from "react-scroll";
+import { LogInBox } from "./LogInBox";
 
 import logo from "../../res/Logo2.png";
+import { LoginButtons } from "./LoginButtons";
+import { UserProfile } from "./UserProfile";
 
 export const NavigationBar = () => {
+    const [showModal, setShowModal] = React.useState(false);
+    const [initialTab, setInitialTab] = React.useState("login");
+
     return (
-        <div className="navbar">
-            <div
-                style={{
-                    alignItems: "left",
-                    justifyContent: "left",
-                    marginRight: "4vw",
-                }}
-            >
-                <Link to="/">
-                    <img className="navbarLogo" src={logo} alt="logo" />
-                </Link>
-                <Link to="/">
-                    <h4 className="navbarText">Home</h4>
-                </Link>
-                <Link to="/#tools">
-                    <h4 className="navbarText">Tools</h4>
-                </Link>
-                <h4 className="navbarText">About</h4>
-            </div>
-
-            <div
-                style={{
-                    alignItems: "right",
-                    justifyContent: "right",
-                    marginRight: "4vw",
-                }}
-            >
-                <button
-                    type="button"
-                    className="btn btn-primary btn-lg navbarButton"
+        <div>
+            <div className="navbar">
+                <div
+                    style={{
+                        alignItems: "left",
+                        justifyContent: "left",
+                        marginRight: "4vw",
+                    }}
                 >
-                    <h4
-                        style={{
-                            padding: "0vh 1.5vw 0vh 1.5vw",
-                            height: "100%",
-                            alignItems: "center",
-                            display: "flex",
-                        }}
-                    >
-                        Sign Up
-                    </h4>
-                </button>
+                    <Link to="/">
+                        <img className="navbarLogo" src={logo} alt="logo" />
+                    </Link>
+                    <Link to="/">
+                        <h4 className="navbarText">Home</h4>
+                    </Link>
+                    <Link to="/#tools">
+                        <h4 className="navbarText">Tools</h4>
+                    </Link>
+                    <h4 className="navbarText">About</h4>
+                </div>
 
-                <button
-                    type="button"
-                    className="btn btn-outline-primary btn-lg navbarButton"
-                >
-                    <h4
-                        style={{
-                            padding: "0vh 1.5vw 0vh 1.5vw",
-                            height: "100%",
-                            alignItems: "center",
-                            display: "flex",
-                        }}
-                    >
-                        Login
-                    </h4>
-                </button>
+                {localStorage.getItem("loggedIn") === "true" ? (
+                    <UserProfile />
+                ) : (
+                    <LoginButtons
+                        setShowModal={setShowModal}
+                        setInitialTab={setInitialTab}
+                    />
+                )}
             </div>
+            <LogInBox
+                showModal={showModal}
+                initialTab={initialTab}
+                setShowModel={setShowModal}
+            />
         </div>
     );
 };
