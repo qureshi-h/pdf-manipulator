@@ -45,20 +45,17 @@ export const LogInBox = ({ showModal, initialTab, setShowModel }) => {
         if (!email || !password) {
             setState({ error: true });
         } else {
-            fetch(
-                "https://server-online-pdf-manager.herokuapp.com/auth/authenticateUser",
-                {
-                    method: "POST",
-                    headers: new Headers({
-                        "Content-Type": "application/json",
-                        Accept: "application/json",
-                    }),
-                    body: JSON.stringify({
-                        email,
-                        password,
-                    }),
-                }
-            )
+            fetch("http://localhost:5001/auth/authenticateUser", {
+                method: "POST",
+                headers: new Headers({
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                }),
+                body: JSON.stringify({
+                    email,
+                    password,
+                }),
+            })
                 .then((response) => response.json())
                 .then((data) => {
                     console.log(data);
@@ -66,6 +63,7 @@ export const LogInBox = ({ showModal, initialTab, setShowModel }) => {
                         if (data.result) {
                             localStorage.setItem("name", data.name);
                             localStorage.setItem("picture", data.picture);
+                            localStorage.setItem("loggedIn", true);
                             setShowModel(false);
                         } else {
                             setState({ error: true });
