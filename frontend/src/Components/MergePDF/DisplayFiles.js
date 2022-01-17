@@ -47,7 +47,7 @@ export const DisplayFiles = ({
             .then((data) => {
                 if (data.status_code === 200) {
                     setOutFile(data.pdf);
-                    // setLoading(false);
+                    setLoading(false);
                     setSelectedFiles([]);
                 } else alert(data.status_message);
             });
