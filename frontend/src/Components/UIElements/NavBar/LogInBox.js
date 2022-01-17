@@ -13,6 +13,7 @@ export const LogInBox = ({ showModal, initialTab, setShowModel }) => {
     });
 
     const addUser = (name, email, password, picture) => {
+        console.log(name, email, password, picture);
         fetch("https://server-online-pdf-manager.herokuapp.com/auth/addUser", {
             method: "POST",
             headers: new Headers({
@@ -20,9 +21,9 @@ export const LogInBox = ({ showModal, initialTab, setShowModel }) => {
                 Accept: "application/json",
             }),
             body: JSON.stringify({
-                name,
-                email,
-                password,
+                name: name,
+                email: email,
+                password: "kk",
                 picture: "none",
             }),
         })
