@@ -8,6 +8,8 @@ import { MergePage } from "./Pages/MergePage";
 import { PDFToImagePage } from "./Pages/PDFToImagePage";
 import { LandingPage } from "./Pages/LandingPage";
 import { ImageToPDFPage } from "./Pages/ImageToPDFPage";
+import { PrivacyPolicyPage } from "./Pages/PrivacyPolicyPage";
+
 import ScrollToTop from "./Components/UIElements/ScrollToTop";
 
 function App() {
@@ -33,6 +35,11 @@ function App() {
                         exact
                         path="/imagetopdf"
                         element={<ImageToPDFPage />}
+                    />
+                    <Route
+                        exact
+                        path="/privacypolicy"
+                        element={<PrivacyPolicyPage />}
                     />
                 </Routes>
             </BrowserRouter>

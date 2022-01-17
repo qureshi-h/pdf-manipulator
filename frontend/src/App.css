@@ -292,3 +292,19 @@ input[type="file"] {
     color: black;
     font-size: 1.1em;
 }
+
+/* Privacy Page  */
+
+.privacyBox {
+    margin: 20vh 10vw 10vh 10vh;
+}
+
+.privacyHeadings {
+    color: yellow;
+    margin: 3vh 0vw 3vh 0vw;
+    font-size: 1.5em;
+}
+
+.privacyText {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
