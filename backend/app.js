@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 
 const reorganiseRoutes = require("./routes/reorganiseRoutes");
 const mergeRoutes = require("./routes/mergeRoutes");
-const pdfToImageRoutes = require("./routes/reorganiseRoutes");
+const pdfToImageRoutes = require("./routes/pdfToImageRoutes");
 const imageToPDFRoutes = require("./routes/imageToPDFRoutes");
 const authenticationRoutes = require("./routes/authenticationRoutes");
 
