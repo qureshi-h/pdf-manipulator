@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { LogInBox } from "./LogInBox";
 
-import logo from "../../res/Logo2.png";
+import logo from "../../../res/Logo2.png";
 import { LoginButtons } from "./LoginButtons";
 import { UserProfile } from "./UserProfile";
 

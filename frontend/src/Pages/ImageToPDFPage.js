@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import { Loader } from "../Components/UIElements/Loader";
 
-import { NavigationBar } from "../Components/UIElements/NavigationBar";
+import { NavigationBar } from "../Components/UIElements/NavBar/NavigationBar";
+
 import { UploadImages } from "../Components/ImageToPDF/UploadImages";
 import { DisplayFile } from "../Components/ReorganisePDF/DisplayFile";
 import { DisplayImages } from "../Components/ReorganisePDF/DisplayImages";

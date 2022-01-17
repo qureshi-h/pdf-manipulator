@@ -1,7 +1,7 @@
 import React from "react";
 import Tooltip from "@mui/material/Tooltip";
 
-import NoPic from "../../res/NoPic.jpeg";
+import NoPic from "../../../res/NoPic.jpeg";
 
 export const UserProfile = () => {
     return (

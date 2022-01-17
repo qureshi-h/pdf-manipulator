@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 
 import { Loader } from "../Components/UIElements/Loader";
-import { NavigationBar } from "../Components/UIElements/NavigationBar";
+import { NavigationBar } from "../Components/UIElements/NavBar/NavigationBar";
 import PrivacyPolicy from "../Components/UIElements/PrivacyPolicy";
 
 export const PrivacyPolicyPage = () => {
