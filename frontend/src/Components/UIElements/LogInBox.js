@@ -178,16 +178,6 @@ export const LogInBox = ({ showModal, initialTab, setShowModel }) => {
         setShowModel(false);
     };
 
-    const loggedIn = state.loggedIn ? (
-        <div>
-            <p>You are signed in with: {state.loggedIn}</p>
-        </div>
-    ) : (
-        <div>
-            <p>You are signed out</p>
-        </div>
-    );
-
     const isLoading = state.loading;
 
     return (
@@ -306,7 +296,6 @@ export const LogInBox = ({ showModal, initialTab, setShowModel }) => {
                     },
                 }}
             />
-            {loggedIn}
         </div>
     );
 };
