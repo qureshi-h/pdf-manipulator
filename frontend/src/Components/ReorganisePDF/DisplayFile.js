@@ -24,7 +24,7 @@ export const DisplayFile = ({ file }) => {
     return (
         <div className="pdf-container" id="pdfContainer">
             <>
-                <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
+                <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.11.338/build/pdf.worker.min.js">
                     <Viewer
                         fileUrl={displayFile}
                         theme={{ theme: "light" }}
