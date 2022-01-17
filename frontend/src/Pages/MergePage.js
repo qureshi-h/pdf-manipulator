@@ -6,7 +6,7 @@ import { DisplayFile } from "../Components/ReorganisePDF/DisplayFile";
 import { UploadFiles } from "../Components/MergePDF/UploadFiles";
 import { Loader } from "../Components/UIElements/Loader";
 
-import { NavigationBar } from "../Components/UIElements/NavigationBar";
+import { NavigationBar } from "../Components/UIElements/NavBar/NavigationBar";
 
 export const MergePage = () => {
     const [selectedFiles, setSelectedFiles] = useState([]);

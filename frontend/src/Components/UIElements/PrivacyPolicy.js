@@ -154,12 +154,13 @@ const Access = () => {
             <p className="privacyText">
                 You may access the Personal Information we hold about you and to
                 update and/or correct it, subject to certain exceptions. If you
-                wish to access your Personal Information, please contact us in
-                writing at {EMAIL}. Online PDF Manager will not charge any fee
-                for your access request, but may charge an administrative fee
-                for providing a copy of your Personal Information. In order to
-                protect your Personal Information we may require identification
-                from you before releasing the requested information.
+                wish to access your Personal Information or request its
+                deletion, please contact us in writing at {EMAIL}. Online PDF
+                Manager will not charge any fee for your access request, but may
+                charge an administrative fee for providing a copy of your
+                Personal Information. In order to protect your Personal
+                Information we may require identification from you before
+                releasing the requested information.
             </p>
         </div>
     );

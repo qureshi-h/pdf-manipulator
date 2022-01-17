@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { UploadFiles } from "../Components/PDFToImage/UploadFiles";
 import { Loader } from "../Components/UIElements/Loader";
 
-import { NavigationBar } from "../Components/UIElements/NavigationBar";
+import { NavigationBar } from "../Components/UIElements/NavBar/NavigationBar";
 import { DisplayImages } from "../Components/PDFToImage/DisplayImages";
 
 export const PDFToImagePage = () => {

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ReactModalLogin from "react-modal-login";
 import "react-modal-login/dist/react-modal-login.css";
 
-import { facebookConfig, googleConfig } from "../../socialConfig";
+import { facebookConfig, googleConfig } from "../../../socialConfig";
 
 export const LogInBox = ({ showModal, initialTab, setShowModel }) => {
     const [state, setState] = useState({
