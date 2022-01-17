@@ -24,6 +24,12 @@ exports.pdfToImage = async (req, res) => {
 
 exports.zipImages = async (req, res) => {
     try {
+        const images = req.body.images;
+        const { stdout, stderr } = spawnSync("python3", [
+            "pdfmanipulation/pdf_to_image/images_to_zip.py",
+            images,
+        ]);
+
         res.status(200).json({
             status_code: 200,
             status_message: "Success",
