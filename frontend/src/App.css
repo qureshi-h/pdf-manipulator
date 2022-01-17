@@ -89,8 +89,8 @@ p {
 
 .tools {
     width: 90vw;
-    margin-top: 2.5vw;
-    margin-bottom: 2.5vw;
+    margin-top: 5vh;
+    margin-bottom: 3vh;
     margin-left: 2vw;
 }
 
@@ -99,7 +99,7 @@ p {
 }
 
 .toolsHeader {
-    margin-top: 2vw;
+    margin-top: 3vh;
     margin-left: 2vw;
     position: relative;
     width: 90%;
@@ -307,4 +307,22 @@ input[type="file"] {
 
 .privacyText {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Footer  */
+
+.footerBox {
+    margin-top: 10vh;
+    margin-bottom: 0;
+    background-color: rgba(219, 217, 217, 0.404);
+    border-top: 1px solid rgba(78, 78, 78, 0.356);
+    height: 6vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.footerLink {
+    margin: 0vh 1vw 0vh 1vw;
+    color: rgba(0, 0, 0, 0.63);
 }
