@@ -5,7 +5,9 @@ const EMAIL = "onlinepdfmanager@gmail.com";
 const Welcome = () => {
     return (
         <div>
-            <p style={{ fontSize: "1.2em" }}>Welcome to Online PDF Manager!</p>
+            <p style={{ fontSize: "1.2em" }}>
+                Welcome to the Online PDF Manager!
+            </p>
             <p className="privacyText">
                 Online PDF Manager is committed to your privacy. This notice
                 describes our Privacy Policy and how we treat data collected on
@@ -69,10 +71,15 @@ const SensitiveInformation = () => {
 
             <p className="privacyText">
                 Sensitive information will be used by us only: <br />
-                <br />• For the primary purpose for which it was obtained
-                <br />• For a secondary purpose that is directly related to the
-                primary purpose <br />• With your consent; or where required or
-                authorised by law.
+                <br />
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;• For the
+                primary purpose for which it was obtained
+                <br />
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;• For a
+                secondary purpose that is directly related to the primary
+                purpose <br />
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;• With your
+                consent; or where required or authorised by law.
             </p>
             {/* <p className="privacyText">
                 Though our Site offers a payment mechanism for entering Story
@@ -108,9 +115,11 @@ const Disclosure = () => {
             </h2>
             <p className="privacyText">
                 Your Personal Information may be disclosed in a number of
-                circumstances including the following: <br /> <br />• Third
-                parties where you consent to the use or disclosure; and <br />•
-                Where required or authorised by law.
+                circumstances including the following: <br /> <br />
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;• Third parties
+                where you consent to the use or disclosure; and <br />
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;• Where required
+                or authorised by law.
             </p>
         </div>
     );
@@ -189,9 +198,7 @@ const Updates = () => {
             </h2>
             <p className="privacyText">
                 If you have any queries or complaints about our Privacy Policy
-                please contact us at: <br />
-                <br />
-                {EMAIL}
+                please contact us at: &emsp;{EMAIL}
             </p>
         </div>
     );
@@ -203,7 +210,11 @@ class PrivacyPolicy extends React.PureComponent {
             <div className="privacyBox">
                 <h1
                     className="privacyHeadings"
-                    style={{ textAlign: "center", fontSize: "2em" }}
+                    style={{
+                        textAlign: "center",
+                        fontSize: "2.5em",
+                        marginBottom: "5vh",
+                    }}
                 >
                     PRIVACY POLICY
                 </h1>
