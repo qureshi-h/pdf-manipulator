@@ -47,7 +47,7 @@ export const DisplayImage = ({ item, index, onLoad, handleDelete }) => {
                                             <img
                                                 onLoad={onLoad}
                                                 src={
-                                                    "http://localhost:5001/" +
+                                                    "https://server-online-pdf-manager.herokuapp.com/" +
                                                     item.image
                                                 }
                                                 className="image"
@@ -61,7 +61,7 @@ export const DisplayImage = ({ item, index, onLoad, handleDelete }) => {
                                             >
                                                 <MdDelete
                                                     className="delete"
-                                                    size={"1.5vw"}
+                                                    size="1.5pc"
                                                 />
                                             </div>
                                         </div>

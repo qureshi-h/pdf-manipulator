@@ -109,6 +109,7 @@ export const LogInBox = ({ showModal, initialTab, setShowModel }) => {
     };
 
     const onLoginSuccess = (method, response) => {
+        console.log(response);
         if (method === "facebook") {
             window.FB.api(
                 "/" + response.authResponse.userID + "/",
