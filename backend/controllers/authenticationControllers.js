@@ -7,7 +7,7 @@ exports.addUser = async (req, res) => {
     try {
         const { name, email, password, picture } = req.body;
 
-        if (password) {
+        if (password !== null) {
             bcrypt.genSalt(saltRounds, (error, salt) => {
                 if (error) throw error;
                 bcrypt.hash(password, salt, async (error, hash) => {
@@ -26,7 +26,7 @@ exports.addUser = async (req, res) => {
                 });
             });
         } else {
-            const result = await Register.add([name, email, hash, picture]);
+            const result = await Register.add([name, email, password, picture]);
             if (result.rowCount === 1) {
                 res.status(200).json({ status_code: 200 });
             } else {

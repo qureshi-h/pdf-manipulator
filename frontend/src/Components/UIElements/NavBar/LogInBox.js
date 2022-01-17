@@ -13,7 +13,7 @@ export const LogInBox = ({ showModal, initialTab, setShowModel }) => {
     });
 
     const addUser = (name, email, password, picture) => {
-        console.log(name, email, password, picture);
+        if (password) console.log(33);
         fetch("https://server-online-pdf-manager.herokuapp.com/auth/addUser", {
             method: "POST",
             headers: new Headers({
@@ -23,13 +23,12 @@ export const LogInBox = ({ showModal, initialTab, setShowModel }) => {
             body: JSON.stringify({
                 name: name,
                 email: email,
-                password: "kk",
+                password: password,
                 picture: "none",
             }),
         })
             .then((response) => response.json())
             .then((data) => {
-                console.log(data);
                 if (data.status_code === 200) {
                     localStorage.setItem("name", name);
                     localStorage.setItem("picture", picture);
@@ -85,7 +84,7 @@ export const LogInBox = ({ showModal, initialTab, setShowModel }) => {
         if (!login || !email || !password) {
             setState({ error: true });
         } else {
-            addUser(login, email, password, "none");
+            addUser(login, email, null, "none");
         }
     };
 
@@ -110,7 +109,6 @@ export const LogInBox = ({ showModal, initialTab, setShowModel }) => {
     };
 
     const onLoginSuccess = (method, response) => {
-        console.log(response);
         if (method === "facebook") {
             window.FB.api(
                 "/" + response.authResponse.userID + "/",
