@@ -47,7 +47,7 @@ export const DisplayFiles = ({
             .then((data) => {
                 if (data.status_code === 200) {
                     setOutFile(data.pdf);
-                    setLoading(false);
+                    // setLoading(false);
                     setSelectedFiles([]);
                 } else alert(data.status_message);
             });
@@ -98,21 +98,33 @@ export const DisplayFiles = ({
                         );
                     })}
                 </DragDropContext>
-
-                <label
-                    htmlFor="bookmark-check"
-                    className="custom-file-upload uploadInput checkBoxInput"
-                >
-                    <i className="fa fa-cloud-upload"></i>Add Bookmark
-                </label>
-                <input
-                    type="checkbox"
-                    id="bookmark-check"
-                    value={bookmark}
-                    onChange={() => {
-                        setBookmark(!bookmark);
+                <div
+                    style={{
+                        border: "1px solid black",
+                        margin: "2vh 1vw 0vh 0vw",
+                        width: "13vw",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
                     }}
-                />
+                >
+                    <label
+                        htmlFor="bookmark-check"
+                        className="custom-file-upload uploadInput checkBoxInput"
+                    >
+                        <i className="fa fa-cloud-upload"></i>Add Bookmark
+                    </label>
+                    <input
+                        className="bookmarkCheckBox"
+                        type="checkbox"
+                        id="bookmark-check"
+                        value={bookmark}
+                        onChange={() => {
+                            setBookmark(!bookmark);
+                        }}
+                        style={{ size: 10 }}
+                    />
+                </div>
             </div>
         </div>
     );
