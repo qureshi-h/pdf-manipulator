@@ -7,18 +7,32 @@ exports.addUser = async (req, res) => {
     try {
         const { name, email, password, picture } = req.body;
 
-        bcrypt.genSalt(saltRounds, (error, salt) => {
-            if (error) throw error;
-            bcrypt.hash(password, salt, async (error, hash) => {
+        if (password) {
+            bcrypt.genSalt(saltRounds, (error, salt) => {
                 if (error) throw error;
-                const result = await Register.add([name, email, hash, picture]);
-                if (result.rowCount === 1) {
-                    res.status(200).json({ status_code: 200 });
-                } else {
-                    throw Error("User Not Added");
-                }
+                bcrypt.hash(password, salt, async (error, hash) => {
+                    if (error) throw error;
+                    const result = await Register.add([
+                        name,
+                        email,
+                        hash,
+                        picture,
+                    ]);
+                    if (result.rowCount === 1) {
+                        res.status(200).json({ status_code: 200 });
+                    } else {
+                        throw Error("User Not Added");
+                    }
+                });
             });
-        });
+        } else {
+            const result = await Register.add([name, email, hash, picture]);
+            if (result.rowCount === 1) {
+                res.status(200).json({ status_code: 200 });
+            } else {
+                throw Error("User Not Added");
+            }
+        }
     } catch (error) {
         res.status(400).json({
             status_code: 400,
