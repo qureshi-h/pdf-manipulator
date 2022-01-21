@@ -11,6 +11,7 @@ import { ImageToPDFPage } from "./Pages/ImageToPDFPage";
 import { PrivacyPolicyPage } from "./Pages/PrivacyPolicyPage";
 
 import ScrollToTop from "./Components/UIElements/ScrollToTop";
+import { AboutPage } from "./Pages/AboutPage";
 
 function App() {
     localStorage.setItem("loggedIn", false);
@@ -41,6 +42,7 @@ function App() {
                         path="/privacypolicy"
                         element={<PrivacyPolicyPage />}
                     />
+                    <Route exact path="/about" element={<AboutPage />} />
                 </Routes>
             </BrowserRouter>
         </div>

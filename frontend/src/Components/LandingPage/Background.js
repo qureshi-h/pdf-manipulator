@@ -17,7 +17,7 @@ export const Background = ({ setLoading }) => {
 
             <Link
                 activeClass="active"
-                to="Tools"
+                to="tools"
                 spy={false}
                 smooth={true}
                 offset={0}

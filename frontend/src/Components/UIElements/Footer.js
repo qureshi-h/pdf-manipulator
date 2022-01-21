@@ -7,7 +7,7 @@ export const Footer = () => {
                 <a href="/privacypolicy" className="footerLink">
                     Privacy Policy
                 </a>
-                <a href="/privacypolicy" className="footerLink">
+                <a href="/about" className="footerLink">
                     About
                 </a>
                 <a href="/privacypolicy" className="footerLink">

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { LogInBox } from "./LogInBox";
 
 import logo from "../../../res/Logo2.png";
@@ -26,10 +27,20 @@ export const NavigationBar = () => {
                     <Link to="/">
                         <h4 className="navbarText">Home</h4>
                     </Link>
-                    <Link to="/#tools">
+                    <HashLink
+                        to="/#tools"
+                        scroll={(el) =>
+                            el.scrollIntoView({
+                                behavior: "auto",
+                                block: "start",
+                            })
+                        }
+                    >
                         <h4 className="navbarText">Tools</h4>
+                    </HashLink>
+                    <Link smooth to="/about">
+                        <h4 className="navbarText">About</h4>
                     </Link>
-                    <h4 className="navbarText">About</h4>
                 </div>
 
                 {localStorage.getItem("loggedIn") === "true" ? (

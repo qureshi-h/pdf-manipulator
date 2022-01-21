@@ -4,15 +4,6 @@ import Lottie from "react-lottie-player";
 import animationData from "../../res/loader.json";
 
 export const Loader = () => {
-    const defaultOptions = {
-        loop: true,
-        autoplay: true,
-        animationData,
-        rendererSettings: {
-            preserveAspectRatio: "xMidYMid slice",
-        },
-    };
-
     return (
         <div className="loader">
             <Lottie

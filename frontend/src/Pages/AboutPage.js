@@ -2,9 +2,9 @@ import React from "react";
 import { Helmet } from "react-helmet";
 
 import { NavigationBar } from "../Components/UIElements/NavBar/NavigationBar";
-import PrivacyPolicy from "../Components/UIElements/PrivacyPolicy";
+import About from "../Components/UIElements/About";
 
-export const PrivacyPolicyPage = () => {
+export const AboutPage = () => {
     return (
         <div>
             <Helmet>
@@ -13,7 +13,7 @@ export const PrivacyPolicyPage = () => {
             </Helmet>
 
             <NavigationBar />
-            <PrivacyPolicy />
+            <About />
         </div>
     );
 };
