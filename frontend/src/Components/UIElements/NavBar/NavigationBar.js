@@ -29,7 +29,9 @@ export const NavigationBar = () => {
                     <Link to="/#tools">
                         <h4 className="navbarText">Tools</h4>
                     </Link>
-                    <h4 className="navbarText">About</h4>
+                    <Link to="/about">
+                        <h4 className="navbarText">About</h4>
+                    </Link>
                 </div>
 
                 {localStorage.getItem("loggedIn") === "true" ? (
