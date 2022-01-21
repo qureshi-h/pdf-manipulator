@@ -32,6 +32,10 @@ p {
     color: white;
 }
 
+a:hover {
+    color: orange;
+}
+
 .pdfImage {
     width: 20%;
 }
@@ -63,7 +67,7 @@ p {
 
 .titleText {
     position: absolute;
-    top: 0;
+    top: 0px;
     margin-top: 65vh;
     left: 5vw;
 }
@@ -130,6 +134,13 @@ p {
     margin-left: 4vw;
     display: inline-block;
     cursor: pointer;
+
+    font-family: "Sequel", sans-serif;
+    font-size: 1.2vw;
+    font-weight: 100;
+    color: white;
+
+    text-decoration: none;
 }
 
 .navbarButton {
@@ -339,4 +350,36 @@ input[type="file"] {
     display: flex;
     justify-content: center;
     margin-top: 8vh;
+}
+
+.toolsDropdown {
+    top: 5vh;
+    transform: translateX(35%);
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.349);
+    z-index: 2;
+    display: block;
+    width: 7vw;
+    margin: auto;
+    padding-bottom: 1.5em;
+}
+
+.toolsDropdownItem {
+    background-color: rgba(0, 0, 0, 0.349);
+    display: block;
+    padding: 1.5em 0em 0em 1em;
+
+    width: 100%;
+    margin: auto;
+
+    cursor: pointer;
+}
+
+.toolsDropdownText {
+    font-size: 0.9rem;
+    color: white;
+    font-family: "Sequel", sans-serif;
+    word-wrap: break-word;
+
+    text-decoration: none;
 }
