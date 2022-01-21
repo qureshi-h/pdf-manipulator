@@ -1,11 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
 import { LogInBox } from "./LogInBox";
 
 import logo from "../../../res/Logo2.png";
 import { LoginButtons } from "./LoginButtons";
 import { UserProfile } from "./UserProfile";
+import { ToolsDropdown } from "./ToolsDropdown";
 
 export const NavigationBar = () => {
     const [showModal, setShowModal] = React.useState(false);
@@ -21,26 +20,18 @@ export const NavigationBar = () => {
                         marginRight: "4vw",
                     }}
                 >
-                    <Link to="/">
+                    <a href="/">
                         <img className="navbarLogo" src={logo} alt="logo" />
-                    </Link>
-                    <Link to="/">
-                        <h4 className="navbarText">Home</h4>
-                    </Link>
-                    <HashLink
-                        to="/#tools"
-                        scroll={(el) =>
-                            el.scrollIntoView({
-                                behavior: "auto",
-                                block: "start",
-                            })
-                        }
-                    >
-                        <h4 className="navbarText">Tools</h4>
-                    </HashLink>
-                    <Link smooth to="/about">
-                        <h4 className="navbarText">About</h4>
-                    </Link>
+                    </a>
+                    <a href="/" className="navbarText">
+                        Home
+                    </a>
+
+                    <ToolsDropdown />
+
+                    <a href="/about" className="navbarText">
+                        About
+                    </a>
                 </div>
 
                 {localStorage.getItem("loggedIn") === "true" ? (

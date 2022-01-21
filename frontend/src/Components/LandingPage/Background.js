@@ -1,18 +1,9 @@
 import * as React from "react";
 import { Link } from "react-scroll";
 
-import background from "../../res/LandingPage.jpg";
-
 export const Background = ({ setLoading }) => {
     return (
         <div className="background">
-            <img
-                onLoad={() => setLoading(false)}
-                src={background}
-                className="backgroundImage"
-                alt={"Background"}
-            />
-
             <h1 className="titleText">Online PDF Manager</h1>
 
             <Link
