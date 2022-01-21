@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Grid } from "@mui/material";
 
 import { Tool } from "./Tool";
@@ -9,12 +9,12 @@ import merge from "../../res/Merge.png";
 import imageToPdf from "../../res/image_to_pdf.png";
 import pdfToImage from "../../res/pdf_to_image.png";
 
-// import ScrollableAnchor from "react-scrollable-anchor";
-
 export const Tools = () => {
+    // useEffect(() => {
+    //     document.querySelector('[id="tools"]').scrollIntoView();
+    // }, []);
     return (
-        // <ScrollableAnchor id={"tools"}>
-        <div id="Tools">
+        <div id="tools">
             <ToolsHeader />
             <div className="tools">
                 <Grid container spacing={3}>
@@ -57,6 +57,5 @@ export const Tools = () => {
                 </Grid>
             </div>
         </div>
-        // </ScrollableAnchor>
     );
 };
