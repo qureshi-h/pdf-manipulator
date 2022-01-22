@@ -12,7 +12,9 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest
-
+        defaults:
+            run:
+                working-directory: ./frontend
         strategy:
             matrix:
                 node-version: [12.x, 14.x, 16.x]
@@ -25,6 +27,6 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: "npm"
-            - run: cd backend && npm ci
-            - run: cd backend && npm run build --if-present
-            - run: cd backend && npm test
+            - run: npm ci
+            - run: npm run build --if-present
+            - run: npm test
