@@ -13,7 +13,6 @@ export const LogInBox = ({ showModal, initialTab, setShowModel }) => {
     });
 
     const addUser = (name, email, password, picture) => {
-        if (password) console.log(33);
         fetch("https://server-online-pdf-manager.herokuapp.com/auth/addUser", {
             method: "POST",
             headers: new Headers({
@@ -84,7 +83,7 @@ export const LogInBox = ({ showModal, initialTab, setShowModel }) => {
         if (!login || !email || !password) {
             setState({ error: true });
         } else {
-            addUser(login, email, null, "none");
+            addUser(login, email, password, "none");
         }
     };
 

@@ -61,7 +61,12 @@ exports.authenticateUser = async (req, res) => {
                 }
             );
         } else {
-            res.status(200).json({ status_code: 200, result: false });
+            res.status(200).json({
+                status_code: 200,
+                result: false,
+                name: null,
+                picture: null,
+            });
         }
     } catch (error) {
         res.status(400).json({
