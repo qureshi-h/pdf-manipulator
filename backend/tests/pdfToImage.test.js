@@ -1,5 +1,6 @@
 "use strict";
 
+const fs = require("fs");
 const chai = require("chai");
 const expect = chai.expect;
 const chaiHttp = require("chai-http");
@@ -8,15 +9,17 @@ const app = require("../app");
 chai.should();
 chai.use(chaiHttp);
 
-describe("Reorganise API", () => {
+describe("PDF To Image API", () => {
     let images;
 
     it("Add PDF", (done) => {
         chai.request(app)
-            .post("/pdf/reorganise/addPDF/")
-            .field("id", "Reorganise-Test")
+            .post("/pdf/pdfToImage/addPDF")
+            .set("content-type", "multipart/form-data")
+            .field("id", "ImageToPDF-Test")
             .field("projectName", "alpha")
-            .attach("file", "res/test-pdf.pdf", "test-pdf.pdf")
+            .attach("files", "res/test-pdf.pdf", "test-pdf.pdf")
+            .attach("files", "res/test-pdf.pdf", "test-pdf.pdf")
             .end((err, response) => {
                 expect(response.status).to.equal(200);
                 expect(response.body).to.be.a("object");
@@ -27,15 +30,14 @@ describe("Reorganise API", () => {
                     "status_message",
                 ]);
                 expect(response.body.status_code).to.be.equal(200);
-                images = response.body.images.split("\n").slice(0, -1);
-
+                images = response.body.images.split("\n");
                 done();
             });
     });
 
     it("Submit PDF", (done) => {
         chai.request(app)
-            .post("/pdf/reorganise/submitPDF/")
+            .post("/pdf/pdfToImage/zipImages")
             .send({ images: images })
             .end((err, response) => {
                 expect(response.status).to.equal(200);
@@ -43,7 +45,8 @@ describe("Reorganise API", () => {
                 expect(response.body).to.have.keys([
                     "status_code",
                     "status_message",
-                    "pdf",
+                    "zip",
+                    "error",
                 ]);
                 expect(response.body.status_code).to.be.equal(200);
                 done();

@@ -6,7 +6,7 @@
         "start": "node app.js",
         "pipinstall": "pip install -r requirements.txt",
         "test": "nyc mocha tests/*.test.js --timeout 10000 --exit",
-        "test-single": "mocha --exit"
+        "test-single": "mocha --timeout 10000 --exit"
     },
     "dependencies": {
         "bcrypt": "^5.0.1",

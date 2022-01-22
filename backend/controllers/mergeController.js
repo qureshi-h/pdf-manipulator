@@ -16,7 +16,7 @@ exports.mergeAdd = async (req, res) => {
             pdf:
                 "https://server-online-pdf-manager.herokuapp.com/" +
                 `${stdout}`,
-            err: `${stderr}`,
+            error: `${stderr}`,
         });
     } catch (err) {
         res.status(400).json({
