@@ -1,13 +1,11 @@
 /node_modules/
 /.idea
 /.nyc_output/
+/uploads/
 
 # dotenv environment variables file
 .env
 .env.test
 env.env
-
-*.pdf
-*.jpg
 
 .DS_Store
