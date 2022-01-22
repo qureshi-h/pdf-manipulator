@@ -8,7 +8,4 @@
 .env.test
 env.env
 
-
-*.jpg
-
 .DS_Store
