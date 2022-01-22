@@ -21,7 +21,11 @@ export const ImageToPDFPage = () => {
             </Helmet>
 
             <NavigationBar />
-            <UploadImages setLoading={setLoading} setImages={setImages} />
+            <UploadImages
+                setLoading={setLoading}
+                setImages={setImages}
+                setOutFile={setOutFile}
+            />
 
             {loading ? (
                 <Loader />

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const UploadImages = ({ setImages, setLoading }) => {
+export const UploadImages = ({ setImages, setLoading, setOutFile }) => {
     const [selectedFiles, setSelectedFiles] = useState([]);
     const [isSelected, setIsSelected] = useState(false);
 
@@ -34,8 +34,10 @@ export const UploadImages = ({ setImages, setLoading }) => {
         )
             .then((response) => response.json())
             .then((data) => {
+                console.log(data);
                 if (data.status_code === 200) {
                     setImages(data.images);
+                    setOutFile(null);
                     setLoading(false);
                 } else alert(data.status_message);
             });
