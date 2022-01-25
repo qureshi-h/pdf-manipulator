@@ -4,9 +4,8 @@ export const LoginButtons = ({ setInitialTab, setShowModal }) => {
     return (
         <div
             style={{
-                alignItems: "right",
-                justifyContent: "right",
                 marginRight: "4vw",
+                display: "inline-flex",
             }}
         >
             <button

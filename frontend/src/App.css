@@ -6,28 +6,28 @@ html {
 
 h1 {
     font-family: "Sequel", sans-serif;
-    font-size: 3.5vw;
+    font-size: 3.5rem;
     font-weight: 300;
     color: white;
 }
 
 h2 {
     font-family: "Sequel", sans-serif;
-    font-size: 2.5vw;
+    font-size: 2.5rem;
     font-weight: 300;
     color: black;
 }
 
 h4 {
     font-family: "Sequel", sans-serif;
-    font-size: 1.2vw;
+    font-size: 1.2rem;
     font-weight: 100;
     color: white;
 }
 
 p {
     font-family: "Sequel", sans-serif;
-    font-size: 0.8vw;
+    font-size: 0.9rem;
     font-weight: 100;
     color: white;
 }
@@ -113,16 +113,18 @@ a:hover {
 .navbar {
     width: 100vw;
     height: 8vh;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     top: 0;
     position: absolute;
     display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
 }
 
 .navbarLogo {
     margin-left: 5vw;
     width: 7vh;
-    display: inline-block;
 }
 
 .navbarLogo:hover {
@@ -131,11 +133,10 @@ a:hover {
 
 .navbarText {
     margin-left: 4vw;
-    display: inline-block;
     cursor: pointer;
 
     font-family: "Sequel", sans-serif;
-    font-size: 1.2vw;
+    font-size: 1.2rem;
     font-weight: 100;
     color: white;
 
@@ -144,8 +145,40 @@ a:hover {
 
 .navbarButton {
     margin-left: 2vw;
-    width: auto;
     height: 4.5vh;
+    display: inline;
+}
+
+.toolsDropdown {
+    position: absolute;
+    transform: translateX(35%);
+    background-color: rgba(0, 0, 0, 0.349);
+    z-index: 2;
+    display: block;
+    margin: auto;
+    top: 0vh;
+    padding-top: 8vh;
+}
+
+.toolsDropdownItem {
+    display: block;
+    padding: 1vh 1.5vw 1vh 1.5vw;
+
+    width: 100%;
+    margin: auto;
+
+    cursor: pointer;
+}
+
+.toolsDropdownItem:hover {
+    color: orange;
+}
+
+.toolsDropdownText {
+    font-size: 0.9rem;
+    color: white;
+    font-family: "Sequel", sans-serif;
+    word-wrap: break-word;
 }
 
 .userImage {
@@ -252,7 +285,7 @@ input[type="file"] {
 
 .mergeText {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.1em;
+    font-size: 1.1rem;
     padding-top: 2vh;
     padding-bottom: 2vh;
     display: inline-flex;
@@ -308,7 +341,7 @@ input[type="file"] {
 .checkBoxInput {
     margin: 0vh 1vw 0vh 0vw;
     color: black;
-    font-size: 1.1em;
+    font-size: 1.1rem;
 }
 
 /* Privacy Page  */
@@ -320,7 +353,7 @@ input[type="file"] {
 .privacyHeadings {
     color: yellow;
     margin: 3vh 0vw 3vh 0vw;
-    font-size: 1.5em;
+    font-size: 1.6rem;
 }
 
 .privacyText {
@@ -349,36 +382,4 @@ input[type="file"] {
     display: flex;
     justify-content: center;
     margin-top: 8vh;
-}
-
-.toolsDropdown {
-    top: 5vh;
-    transform: translateX(35%);
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.349);
-    z-index: 2;
-    display: block;
-    width: 7vw;
-    margin: auto;
-    padding-bottom: 1.5em;
-}
-
-.toolsDropdownItem {
-    background-color: rgba(0, 0, 0, 0.349);
-    display: block;
-    padding: 1.5em 0em 0em 1em;
-
-    width: 100%;
-    margin: auto;
-
-    cursor: pointer;
-}
-
-.toolsDropdownText {
-    font-size: 0.9rem;
-    color: white;
-    font-family: "Sequel", sans-serif;
-    word-wrap: break-word;
-
-    text-decoration: none;
 }

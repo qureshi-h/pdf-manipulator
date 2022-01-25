@@ -40,11 +40,11 @@ export const ToolsDropdown = () => {
             {showTools && (
                 <div className="toolsDropdown">
                     {menu.map((item) => (
-                        <div className="toolsDropdownItem">
-                            <a href={item.path} className="toolsDropdownText">
+                        <Link to={item.path} style={{ textDecoration: "none" }}>
+                            <div className="toolsDropdownItem toolsDropdownText">
                                 {item.name}
-                            </a>
-                        </div>
+                            </div>
+                        </Link>
                     ))}
                 </div>
             )}

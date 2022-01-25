@@ -18,11 +18,13 @@ export const NavigationBar = () => {
                         alignItems: "left",
                         justifyContent: "left",
                         marginRight: "4vw",
+                        display: "inline",
                     }}
                 >
                     <a href="/">
                         <img className="navbarLogo" src={logo} alt="logo" />
                     </a>
+
                     <a href="/" className="navbarText">
                         Home
                     </a>
