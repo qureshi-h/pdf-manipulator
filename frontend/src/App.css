@@ -118,11 +118,10 @@ a:hover {
     position: absolute;
     display: inline-flex;
     align-items: center;
-    flex-wrap: wrap;
-    overflow: hidden;
 }
 
 .navbarLogo {
+    margin-right: 4vw;
     margin-left: 5vw;
     width: 7vh;
 }
@@ -132,7 +131,7 @@ a:hover {
 }
 
 .navbarText {
-    margin-left: 4vw;
+    margin-right: 4vw;
     cursor: pointer;
 
     font-family: "Sequel", sans-serif;
@@ -151,13 +150,14 @@ a:hover {
 
 .toolsDropdown {
     position: absolute;
-    transform: translateX(35%);
+    transform: translateX(-1.5vw);
     background-color: rgba(0, 0, 0, 0.349);
-    z-index: 2;
+    z-index: 1;
     display: block;
     margin: auto;
     top: 0vh;
     padding-top: 8vh;
+    left: inherit;
 }
 
 .toolsDropdownItem {
