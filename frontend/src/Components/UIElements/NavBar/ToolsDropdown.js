@@ -15,7 +15,11 @@ export const ToolsDropdown = () => {
 
     return (
         <div
-            style={{ display: "inline-flex" }}
+            style={{
+                display: "inline-flex",
+                justifyContent: "left",
+                alignItems: "left",
+            }}
             onMouseEnter={() => {
                 setShowTools(true);
             }}
@@ -31,6 +35,7 @@ export const ToolsDropdown = () => {
                         block: "start",
                     })
                 }
+                style={{ textDecoration: "none", zIndex: "3" }}
             >
                 <a className="navbarText">
                     Tools <RiArrowDropDownLine size={"1.2em"} />
