@@ -37,9 +37,9 @@ export const ToolsDropdown = () => {
                 }
                 style={{ textDecoration: "none", zIndex: "3" }}
             >
-                <a className="navbarText">
+                <p className="navbarText">
                     Tools <RiArrowDropDownLine size={"1.2em"} />
-                </a>
+                </p>
             </HashLink>
 
             {showTools && (
