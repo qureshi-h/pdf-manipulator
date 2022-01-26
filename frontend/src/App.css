@@ -1,7 +1,75 @@
 @import url("https://fonts.cdnfonts.com/css/sequel");
 
-html {
-    font-size: 100%;
+@media screen and (max-width: 1200px) {
+    html {
+        font-size: 100%;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    html {
+        font-size: 95%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    html {
+        font-size: 90%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    html {
+        font-size: 85%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    html {
+        font-size: 80%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    html {
+        font-size: 62%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    html {
+        font-size: 45%;
+    }
+}
+
+@media screen and (max-width: 200px) {
+    html {
+        font-size: 40%;
+    }
+}
+
+@media screen and (max-width: 100px) {
+    html {
+        font-size: 10%;
+    }
 }
 
 h1 {
@@ -224,7 +292,7 @@ input[type="file"] {
 }
 
 .custom-file-upload {
-    font-size: 1vw;
+    font-size: 1rem;
     border: 1px solid #ccc;
     display: inline-block;
     padding: 6px 12px;
