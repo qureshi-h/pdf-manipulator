@@ -9,6 +9,7 @@ import { PDFToImagePage } from "./Pages/PDFToImagePage";
 import { LandingPage } from "./Pages/LandingPage";
 import { ImageToPDFPage } from "./Pages/ImageToPDFPage";
 import { PrivacyPolicyPage } from "./Pages/PrivacyPolicyPage";
+import { NotFoundPage } from "./Pages/NotFoundPage";
 
 import ScrollToTop from "./Components/UIElements/ScrollToTop";
 import { AboutPage } from "./Pages/AboutPage";
@@ -20,29 +21,17 @@ function App() {
             <BrowserRouter>
                 <ScrollToTop />
                 <Routes>
-                    <Route exact path="/" element={<LandingPage />} />
+                    <Route path="/" element={<LandingPage />} />
+                    <Route path="/reorganise" element={<ReorganisePage />} />
+                    <Route path="/merge" element={<MergePage />} />
+                    <Route path="/pdftoimage" element={<PDFToImagePage />} />
+                    <Route path="/imagetopdf" element={<ImageToPDFPage />} />
                     <Route
-                        exact
-                        path="/reorganise"
-                        element={<ReorganisePage />}
-                    />
-                    <Route exact path="/merge" element={<MergePage />} />
-                    <Route
-                        exact
-                        path="/pdftoimage"
-                        element={<PDFToImagePage />}
-                    />
-                    <Route
-                        exact
-                        path="/imagetopdf"
-                        element={<ImageToPDFPage />}
-                    />
-                    <Route
-                        exact
                         path="/privacypolicy"
                         element={<PrivacyPolicyPage />}
                     />
-                    <Route exact path="/about" element={<AboutPage />} />
+                    <Route path="/about" element={<AboutPage />} />
+                    <Route path="*" element={<NotFoundPage />} />
                 </Routes>
             </BrowserRouter>
         </div>

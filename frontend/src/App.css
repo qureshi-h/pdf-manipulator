@@ -234,12 +234,13 @@ a:hover {
     margin: auto;
     top: 0vh;
     padding-top: 8vh;
+    padding-bottom: 0.5vh;
     left: inherit;
 }
 
 .toolsDropdownItem {
     display: block;
-    padding: 1vh 1.5vw 1vh 1.5vw;
+    padding: 1vh 1vw 1vh 1vw;
 
     width: 100%;
     margin: auto;
@@ -451,7 +452,7 @@ input[type="file"] {
 }
 
 .footerLink {
-    margin: 0vh 1vw 0vh 1vw;
+    margin: 0vh 2vw 0vh 2vw;
     color: rgba(0, 0, 0, 0.63);
 }
 
@@ -459,4 +460,23 @@ input[type="file"] {
     display: flex;
     justify-content: center;
     margin-top: 8vh;
+}
+
+/* Not Found Page */
+
+.notFoundPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(230, 172, 65);
+}
+
+.notFoundLink {
+    color: orange;
+    text-decoration: none;
+}
+
+.notFoundLink:hover {
+    color: #09ff07;
+    text-decoration: underline;
 }
