@@ -15,7 +15,9 @@ exports.mergeAdd = async (req, res) => {
         res.status(200).json({
             status_code: 200,
             status_message: "Success",
-            pdf: req.protocol + "://" + req.get("host") + "/" + `${stdout}`,
+            pdf:
+                "https://server-online-pdf-manager.herokuapp.com/" +
+                `${stdout}`,
             error: `${stderr}`,
         });
     } catch (err) {
