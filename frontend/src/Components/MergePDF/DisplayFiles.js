@@ -45,6 +45,7 @@ export const DisplayFiles = ({
         )
             .then((response) => response.json())
             .then((data) => {
+                console.log(data);
                 if (data.status_code === 200) {
                     setOutFile(data.pdf);
                     setLoading(false);
@@ -79,7 +80,7 @@ export const DisplayFiles = ({
                     className="btn btn-light btn-lg clearButton"
                     onClick={handleClear}
                 >
-                    <h4 style={{ color: "black" }}>Clear</h4>
+                    <h4 style={{ color: "black", margin: 0 }}>Clear</h4>
                 </button>
             </div>
             <div
