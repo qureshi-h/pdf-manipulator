@@ -228,7 +228,7 @@ a:hover {
 .toolsDropdown {
     position: absolute;
     transform: translateX(-1.5vw);
-    background-color: rgba(0, 0, 0, 0.349);
+    background-color: rgba(0, 0, 0, 0.75);
     z-index: 1;
     display: block;
     margin: auto;
@@ -383,9 +383,8 @@ input[type="file"] {
 
 .clearButton {
     margin: 4vh 0 2vh 28vw;
-    width: 6vw;
-    height: 4vh;
-    display: block;
+    width: auto;
+    height: auto;
     border: none;
 }
 
