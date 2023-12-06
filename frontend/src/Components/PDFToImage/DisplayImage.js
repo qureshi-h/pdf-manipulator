@@ -1,4 +1,6 @@
 import React from "react";
+import { baseUrl } from "../../services/api";
+
 
 export const DisplayImage = ({ image, index, handleChange, onLoad }) => {
     return (
@@ -6,7 +8,7 @@ export const DisplayImage = ({ image, index, handleChange, onLoad }) => {
             <img
                 onLoad={onLoad}
                 src={
-                    "https://server-online-pdf-manager.herokuapp.com/" +
+                    baseUrl +
                     image.image
                 }
                 alt="pdf"

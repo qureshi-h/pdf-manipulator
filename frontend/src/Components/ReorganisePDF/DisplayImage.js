@@ -1,5 +1,6 @@
 import React from "react";
 import { Draggable, Droppable } from "react-beautiful-dnd";
+import { baseUrl } from "../../services/api";
 
 import { MdDelete } from "react-icons/md";
 
@@ -46,10 +47,7 @@ export const DisplayImage = ({ item, index, onLoad, handleDelete }) => {
                                         >
                                             <img
                                                 onLoad={onLoad}
-                                                src={
-                                                    "https://server-online-pdf-manager.herokuapp.com/" +
-                                                    item.image
-                                                }
+                                                src={baseUrl + item.image}
                                                 className="image"
                                                 alt={index}
                                             />

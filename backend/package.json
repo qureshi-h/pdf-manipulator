@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
-        "start": "node app.js",
+        "start": "nodemon app.js",
         "pipinstall": "pip install -r requirements.txt",
         "test": "nyc mocha tests/*.test.js --timeout 10000 --exit",
         "test-single": "mocha --timeout 10000 --exit"
@@ -20,6 +20,7 @@
         "morgan": "~1.9.1",
         "multer": "^1.4.3",
         "mysql2": "^2.3.3",
+        "nodemon": "^3.0.2",
         "pg": "^8.7.1"
     },
     "devDependencies": {

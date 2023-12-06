@@ -6,7 +6,7 @@ exports.addPDF = async (req, res) => {
             "pdfmanipulation/reorganise/pdf_to_image.py",
             req.file.path,
         ]);
-
+        console.log(`${stderr}`);
         res.status(200).json({
             status_code: 200,
             status_message: "Success",
@@ -29,13 +29,10 @@ exports.submitPDF = async (req, res) => {
             "pdfmanipulation/reorganise/image_to_pdf.py",
             images,
         ]);
-
         res.status(200).json({
             status_code: 200,
             status_message: "Success",
-            pdf:
-                "https://server-online-pdf-manager.herokuapp.com/" +
-                `${stdout}`,
+            pdf: `${stdout}`,
         });
     } catch (err) {
         res.status(400).json({

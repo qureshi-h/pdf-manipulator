@@ -7,7 +7,7 @@ merger = PdfFileMerger()
 all_pdfs = [pdf for pdf in sys.argv[1].split(",")]
 [merger.append(pdf) for pdf in all_pdfs]
 
-filename = "Merged.pdf"
+filename = "merged.pdf"
 path = "/".join(sys.argv[1].split(",")[0].split("/")[:-1]) + "/" + filename
 
 with open(path, "wb") as new_file:

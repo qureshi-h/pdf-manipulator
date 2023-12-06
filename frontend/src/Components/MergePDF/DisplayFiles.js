@@ -1,6 +1,7 @@
 import React from "react";
 import { DragDropContext } from "react-beautiful-dnd";
 import { DisplayFile } from "../MergePDF/DisplayFile";
+import { api } from "../../services/api";
 
 export const DisplayFiles = ({
     selectedFiles,
@@ -36,13 +37,7 @@ export const DisplayFiles = ({
             formData.append("files", selectedFiles[i].file);
         }
 
-        fetch(
-            "https://server-online-pdf-manager.herokuapp.com/pdf/merge/addPDF",
-            {
-                method: "POST",
-                body: formData,
-            }
-        )
+        api.post("pdf/merge/addPDF", formData)
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
