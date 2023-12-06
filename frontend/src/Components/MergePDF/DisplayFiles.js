@@ -40,7 +40,6 @@ export const DisplayFiles = ({
         api.post("pdf/merge/addPDF", formData)
             .then((response) => response.json())
             .then((data) => {
-                console.log(data);
                 if (data.status_code === 200) {
                     setOutFile(data.pdf);
                     setLoading(false);
