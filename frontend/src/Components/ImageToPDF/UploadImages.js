@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { api } from "../../services/api";
 
 export const UploadImages = ({ setImages, setLoading, setOutFile }) => {
     const [selectedFiles, setSelectedFiles] = useState([]);
@@ -25,13 +26,7 @@ export const UploadImages = ({ setImages, setLoading, setOutFile }) => {
             formData.append("images", selectedFiles[i]);
         }
 
-        fetch(
-            "https://server-online-pdf-manager.herokuapp.com/pdf/imageToPDF/addImage",
-            {
-                method: "POST",
-                body: formData,
-            }
-        )
+        api.post("pdf/ImageToPDF/addImage", formData)
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);

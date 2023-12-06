@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Viewer } from "@react-pdf-viewer/core";
-
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 import { Worker, ProgressBar } from "@react-pdf-viewer/core";
+import { baseUrl } from "../../services/api";
 
 export const DisplayFile = ({ file }) => {
     const defaultLayoutPluginInstance = defaultLayoutPlugin({
@@ -26,7 +26,7 @@ export const DisplayFile = ({ file }) => {
             <>
                 <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.11.338/build/pdf.worker.min.js">
                     <Viewer
-                        fileUrl={displayFile}
+                        fileUrl={baseUrl + displayFile}
                         theme={{ theme: "light" }}
                         onDocumentLoad={onDocumentLoad}
                         renderLoader={(percentages) => (

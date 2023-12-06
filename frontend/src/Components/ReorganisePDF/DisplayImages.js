@@ -3,7 +3,7 @@ import { DragDropContext } from "react-beautiful-dnd";
 import { v4 as uuid } from "uuid";
 import { Grid } from "@mui/material";
 import { scroller } from "react-scroll";
-
+import { api } from "../../services/api";
 import { DisplayImage } from "./DisplayImage";
 
 export const DisplayImages = ({ pdfImages, setOutFile, setLoading }) => {
@@ -42,19 +42,14 @@ export const DisplayImages = ({ pdfImages, setOutFile, setLoading }) => {
 
     const handleDone = () => {
         setLoading(true);
-
-        fetch(
-            "https://server-online-pdf-manager.herokuapp.com/pdf/reorganise/submitPDF",
-            {
-                method: "POST",
-                headers: new Headers({
-                    "Content-Type": "application/json",
-                    Accept: "application/json",
-                }),
-                body: JSON.stringify({
-                    images: images.map((images) => images.image),
-                }),
-            }
+        console.log(JSON.stringify({
+            images: images.map((images) => images.image),
+        }));
+        api.post_json(
+            "pdf/reorganise/submitPDF",
+            JSON.stringify({
+                images: images.map((images) => images.image),
+            })
         )
             .then((response) => response.json())
             .then((data) => {

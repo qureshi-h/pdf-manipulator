@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Grid } from "@mui/material";
 import { scroller } from "react-scroll";
+import { api, baseUrl } from "../../services/api";
 import { DisplayImage } from "./DisplayImage";
 
 export const DisplayImages = ({ all_images, setLoading }) => {
@@ -20,28 +21,18 @@ export const DisplayImages = ({ all_images, setLoading }) => {
 
     const handleDone = () => {
         setLoading(true);
-        fetch(
-            "https://server-online-pdf-manager.herokuapp.com/pdf/pdfToImage/zipImages",
-            {
-                method: "POST",
-                headers: new Headers({
-                    "Content-Type": "application/json",
-                    Accept: "application/json",
-                }),
-                body: JSON.stringify({
-                    images: images
-                        .filter((image) => image.checked)
-                        .map((image) => image.image),
-                }),
-            }
+        api.post_json(
+            "pdf/pdfToImage/zipImages",
+            JSON.stringify({
+                images: images
+                    .filter((image) => image.checked)
+                    .map((image) => image.image),
+            })
         )
             .then((response) => response.json())
             .then((data) => {
                 if (data.status_code === 200) {
-                    downloadZip(
-                        "https://server-online-pdf-manager.herokuapp.com/" +
-                            data.zip
-                    );
+                    downloadZip(baseUrl + data.zip);
                     setLoading(false);
                 } else alert(data.status_message);
             });

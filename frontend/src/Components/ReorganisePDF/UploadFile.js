@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { api } from "../../services/api";
 
 export const UploadFile = ({ setImages, setOutFile, setLoading }) => {
     const [selectedFile, setSelectedFile] = useState(null);
@@ -24,16 +25,11 @@ export const UploadFile = ({ setImages, setOutFile, setLoading }) => {
         formData.append("projectName", "zeta");
         formData.append("file", selectedFile);
 
-        fetch(
-            "https://server-online-pdf-manager.herokuapp.com/pdf/reorganise/addPDF",
-            {
-                method: "POST",
-                body: formData,
-            }
-        )
+        api.post("pdf/reorganise/addPDF", formData)
             .then((response) => response.json())
             .then((data) => {
                 if (data.status_code === 200) {
+                    console.log(data);
                     setImages(data.images.split("\n").slice(0, -1));
                     setOutFile(null);
                     setLoading(false);
