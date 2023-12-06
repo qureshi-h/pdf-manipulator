@@ -12,7 +12,7 @@ exports.mergeAdd = async (req, res) => {
         const files = req.files.map((file) => file.path);
         const { stdout, stderr } = spawnSync("python3", [script, files]);
 
-        console.log(`${stdout}`);
+        console.log(`${stdout}`, `${stderr}`);
         res.status(200).json({
             status_code: 200,
             status_message: "Success",
