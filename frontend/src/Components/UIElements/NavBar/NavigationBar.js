@@ -2,7 +2,7 @@ import React from "react";
 import { LogInBox } from "./LogInBox";
 
 import logo from "../../../res/Logo2.png";
-import { LoginButtons } from "./LoginButtons";
+// import { LoginButtons } from "./LoginButtons";
 import { UserProfile } from "./UserProfile";
 import { ToolsDropdown } from "./ToolsDropdown";
 
@@ -36,14 +36,14 @@ export const NavigationBar = () => {
                     </a>
                 </div>
 
-                {localStorage.getItem("loggedIn") === "true" ? (
+                {/* {localStorage.getItem("loggedIn") === "true" ? (
                     <UserProfile />
                 ) : (
                     <LoginButtons
                         setShowModal={setShowModal}
                         setInitialTab={setInitialTab}
                     />
-                )}
+                )} */}
             </div>
             <LogInBox
                 showModal={showModal}

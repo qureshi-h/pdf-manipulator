@@ -44,8 +44,8 @@ export const ToolsDropdown = () => {
 
             {showTools && (
                 <div className="toolsDropdown">
-                    {menu.map((item) => (
-                        <Link to={item.path} style={{ textDecoration: "none" }}>
+                    {menu.map((item, index) => (
+                        <Link to={item.path} style={{ textDecoration: "none" }} key={"dropdown_tool_" + index}>
                             <div className="toolsDropdownItem toolsDropdownText">
                                 {item.name}
                             </div>
