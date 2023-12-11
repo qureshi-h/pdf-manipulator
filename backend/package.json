@@ -4,7 +4,6 @@
     "private": true,
     "scripts": {
         "start": "nodemon app.js",
-        "build": "netlify deploy --prod",
         "pipinstall": "pip install -r requirements.txt",
         "test": "nyc mocha tests/*.test.js --timeout 10000 --exit",
         "test-single": "mocha --timeout 10000 --exit"
